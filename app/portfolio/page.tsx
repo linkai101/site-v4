@@ -10,20 +10,21 @@ import BongoCat from './BongoCat';
 
 export default function PortfolioPage() {
   return <>
-    <div className="sticky top-0 p-6 container max-w-4xl bg-gradient-to-b from-theme-background via-theme-background to-transparent z-30">
+    <div className="p-6 container max-w-4xl">
       <div className="flex items-center gap-3">
-        <div className="h-8 w-8 flex justify-center items-center bg-gradient-to-br from-theme-primary to-theme-primaryVariant rounded-full overflow-hidden">
+        <div className="h-8 w-8 flex justify-center items-center bg-gradient-to-br from-theme-primary to-theme-background rounded-full overflow-hidden">
           <img
+            // src="/assets/linkai-transparent.png"
             src="/assets/memoji.png"
           />
         </div>
 
-        <span className="text-xl font-semibold">
+        <span className="text-xl font-semibold font-display">
           Linkai Wu
         </span>
       </div>
 
-      <h1 className="text-4xl font-bold mt-6">
+      <h1 className="text-4xl font-bold font-display mt-6">
         Portfolio
       </h1>
     </div>

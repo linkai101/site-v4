@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'media', // bool or 'media' (system setting) or 'class' (toggle manually)
+  darkMode: false, // bool or 'media' (system setting) or 'class' (toggle manually)
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -12,7 +12,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Anybody", "sans-serif"],
+        sans: ["Epilogue", "sans-serif"],
+        display: ["Anybody", "sans-serif"],
         // fancy: ["", "cursive"],
       },
       colors: {

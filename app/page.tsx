@@ -1,5 +1,8 @@
 
+import Link from 'next/link';
+
 import { FaAngleDown, FaRegStar } from 'react-icons/fa';
+import { FiMail, FiGithub, FiLinkedin, FiYoutube } from 'react-icons/fi';
 
 export default function HomePage() {
   return <>
@@ -11,14 +14,15 @@ export default function HomePage() {
           sticky top-0
         "
       >
-        <div className="h-64 w-64 flex justify-center items-center bg-gradient-to-br from-theme-primary to-theme-primaryVariant rounded-full overflow-hidden">
+        <div className="h-64 w-64 flex justify-center items-center bg-gradient-to-br from-theme-primary to-theme-background rounded-full overflow-hidden">
           <img
+            // src="/assets/linkai-transparent.png"
             src="/assets/memoji.png"
           />
         </div>
 
         <div className="flex flex-col items-center">
-          <h1 className="text-5xl font-black drop-shadow-xl">
+          <h1 className="text-5xl font-black font-display drop-shadow-xl">
             Linkai Wu
           </h1>
 
@@ -51,7 +55,7 @@ export default function HomePage() {
           </div>
         
           <div className="py-1.5 flex gap-2.5">
-            <div className="px-2.5 py-1 flex items-center gap-1.5 text-sm bg-black/10 rounded-lg">
+            <div className="px-2.5 py-1 flex items-center gap-1.5 text-sm font-display bg-black/10 rounded-lg">
               👋
               <span className="mt-0.5">Welcome</span>
             </div>
@@ -63,7 +67,7 @@ export default function HomePage() {
         </div>
 
         <div className="p-12">
-          <h2 className="text-2xl font-bold">
+          <h2 className="text-2xl font-extrabold font-display">
             hey! i'm linkai.
           </h2>
           <p className="font-light mt-2">
@@ -72,7 +76,102 @@ export default function HomePage() {
             Welcome to my corner of the internet!
           </p>
 
-          <p className="font-light mt-8">
+          <h3 className="text-lg font-bold font-display italic mt-10">
+            what i do
+          </h3>
+          <div className="grid grid-cols-3 gap-4 mt-2">
+            <div className="h-28 bg-theme-primaryVariant/25 rounded-md"/>
+            <div className="h-28 bg-theme-primaryVariant/25 rounded-md"/>
+            <div className="h-28 bg-theme-primaryVariant/25 rounded-md"/>
+          </div>
+
+          <h3 className="text-lg font-bold font-display italic mt-10">
+            check out...
+          </h3>
+          <div className="grid grid-cols-3 gap-4 mt-2">
+            <Link href="https://mini.blairhacks.com" target="_blank" rel="noopener noreferrer">
+              <div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md">
+                <div className="flex-1">
+                  <h4 className="text-sm font-semibold">
+                    BlairHacks Mini '22
+                  </h4>
+                  <p className="text-xs leading-4 mt-0.5">
+                    A free, IRL mini hackathon. Dec 10, 2022 @ 10AM-6PM. Register now!
+                  </p>
+                </div>
+
+                <div>
+                  <img
+                    src="/assets/blairhacks.png"
+                    className="h-10 aspect-square rounded-md"
+                  />
+                </div>
+              </div>
+            </Link>
+
+            <Link href="https://blair.hackclub.com" target="_blank" rel="noopener noreferrer">
+              <div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md">
+                <div className="flex-1">
+                  <h4 className="text-sm font-semibold">
+                    Blair Hack Club
+                  </h4>
+                  <p className="text-xs leading-4 mt-0.5">
+                    Creative coding club at MBHS. Wednesdays during lunch @ 314.
+                  </p>
+                </div>
+
+                <div>
+                  <img
+                    src="/assets/bhc.png"
+                    className="h-10 aspect-square rounded-md"
+                  />
+                </div>
+              </div>
+            </Link>
+
+            <Link href="https://polistat.mbhs.edu" target="_blank" rel="noopener noreferrer">
+              <div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md">
+                <div className="flex-1">
+                  <h4 className="text-sm font-semibold">
+                    ORACLE of Blair 2022
+                  </h4>
+                  <p className="text-xs leading-4 mt-0.5">
+                    A project to predict the 2022 midterm elections. Created by '23 seniors at MBHS.
+                  </p>
+                </div>
+
+                <div>
+                  <img
+                    src="/assets/oracle.png"
+                    className="h-10 aspect-square rounded-md"
+                  />
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          <h3 className="text-lg font-bold font-display mt-10">
+            wanna chat?
+          </h3>
+          <div className="flex gap-3 mt-2">
+            <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25">
+              <FiMail size="2.15rem" className="text-theme-primary stroke-[2.2px]"/>
+            </div>
+
+            <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25">
+              <FiGithub size="2.25rem" className="text-theme-primary stroke-[2.2px]"/>
+            </div>
+
+            <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25">
+              <FiLinkedin size="2rem" className="text-theme-primary stroke-[2.2px] mb-[0.1rem]"/>
+            </div>
+            
+            <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25">
+              <FiYoutube size="2.15rem" className="text-theme-primary stroke-[2.2px] -mb-[0.1rem]"/>
+            </div>
+          </div>
+          
+          {/* <p className="font-light mt-8">
             <br/>&gt;
             <br/>&gt;
             <br/>&gt;
@@ -81,7 +180,7 @@ export default function HomePage() {
             <br/>&gt;
             <br/>&gt;
             <br/>&gt;
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
