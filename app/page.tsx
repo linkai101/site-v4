@@ -170,17 +170,10 @@ export default function HomePage() {
               <FiYoutube size="2.15rem" className="text-theme-primary stroke-[2.2px] -mb-[0.1rem]"/>
             </div>
           </div>
-          
-          {/* <p className="font-light mt-8">
-            <br/>&gt;
-            <br/>&gt;
-            <br/>&gt;
-            <br/>&gt;
-            <br/>&gt;
-            <br/>&gt;
-            <br/>&gt;
-            <br/>&gt;
-          </p> */}
+
+          <p className="text-xs font-light italic mt-10">
+            Last updated: Nov 11, 2022
+          </p>
         </div>
       </div>
     </div>
