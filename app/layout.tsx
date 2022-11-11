@@ -1,5 +1,7 @@
 import './globals.css';
 
+import Navbar from './Navbar';
+
 export default function RootLayout({
   children,
 }: {
@@ -12,6 +14,8 @@ export default function RootLayout({
         <meta name="description" content="by @linkai101 on github" />
       </head>
       <body className="bg-theme-background text-theme-onBackground">
+        <Navbar/>
+        
         {children}
       </body>
     </html>

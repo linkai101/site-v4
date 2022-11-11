@@ -22,7 +22,7 @@ module.exports = {
           secondary: "#DEB841",
           secondaryVariant: "#EFCB68",
           background: "#F5FEFD",
-          surface: "#F5FEFD",
+          surface: "#F5FEFD", //#FBFCF8
           // error: "",
           onPrimary: "#F5FEFD",
           onSecondary: "#F5FEFD",

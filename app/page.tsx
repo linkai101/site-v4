@@ -1,7 +1,7 @@
+
 import { FaAngleDown, FaRegStar } from 'react-icons/fa';
 
-
-export default function Home() {
+export default function HomePage() {
   return <>
     <div>
       <div
@@ -36,12 +36,11 @@ export default function Home() {
       <div className="h-48"/>
     </div>
 
-    <div className="px-8 relative">
+    <div className="px-8 relative -mt-40">
       <div
         className="
           container max-w-4xl
           bg-theme-surface text-theme-onSurface rounded-t-xl shadow-2xl overflow-hidden
-          -mt-40
         "
       >
         <div className="flex gap-4 bg-black/5">
