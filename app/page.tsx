@@ -154,21 +154,37 @@ export default function HomePage() {
             wanna chat?
           </h3>
           <div className="flex gap-3 mt-2">
-            <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25">
-              <FiMail size="2.15rem" className="text-theme-primary stroke-[2.2px]"/>
-            </div>
+            <Link href="mailto:linkai@linkaiwu.com">
+              <div className="px-2 h-12 flex items-end justify-center gap-2.5 rounded-lg bg-theme-primaryVariant/25">
+                <FiMail size="2.15rem" className="text-theme-primary stroke-[2.2px]"/>
+                <div className="py-0.5">
+                  <p className="text-xs text-theme-primary font-extrabold">
+                    Contact me
+                  </p>
+                  <p className="text-xs text-theme-onSurface/75 font-bold -mt-0.5">
+                    linkai@linkaiwu.com
+                  </p>
+                </div>
+              </div>
+            </Link>
 
-            <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25">
-              <FiGithub size="2.25rem" className="text-theme-primary stroke-[2.2px]"/>
-            </div>
+            <Link href="https://github.com/linkai101" target="_blank" rel="noopener noreferrer">
+              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25">
+                <FiGithub size="2.25rem" className="text-theme-primary stroke-[2.2px]"/>
+              </div>
+            </Link>
 
-            <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25">
-              <FiLinkedin size="2rem" className="text-theme-primary stroke-[2.2px] mb-[0.1rem]"/>
-            </div>
+            <Link href="https://linkedin.com/in/linkaiwu" target="_blank" rel="noopener noreferrer">
+              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25">
+                <FiLinkedin size="2rem" className="text-theme-primary stroke-[2.2px] mb-[0.1rem]"/>
+              </div>
+            </Link>
             
-            <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25">
-              <FiYoutube size="2.15rem" className="text-theme-primary stroke-[2.2px] -mb-[0.1rem]"/>
-            </div>
+            <Link href="https://youtube.com/@linkai" target="_blank" rel="noopener noreferrer">
+              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25">
+                <FiYoutube size="2.15rem" className="text-theme-primary stroke-[2.2px] -mb-[0.1rem]"/>
+              </div>
+            </Link>
           </div>
 
           <p className="text-xs font-light italic mt-10">

@@ -26,7 +26,7 @@ const projects: { [id:string]: any; } = {
     ]
   },
   stemtothesky: {
-    title: "STEM to the Sky website",
+    title: "STEM to the Sky's website",
     description: ""
   },
   bhcsite: {
