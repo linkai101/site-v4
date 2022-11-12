@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import Polistat from './Polistat';
 import StemtotheSky from './StemtotheSky';
-import BhcSite from './BhcSite';
+import Bhc from './Bhc';
 import BhcScrapbook from './BhcScrapbook';
 import Codelet from './Codelet';
 import Jamcave from './Jamcave';
@@ -27,31 +27,57 @@ const projects: { [id:string]: any; } = {
   },
   stemtothesky: {
     title: "STEM to the Sky's website",
-    description: ""
+    description: "",
+    links: [
+      { label: "website", href: "https://stemtothesky.org" },
+    ]
   },
-  bhcsite: {
+  bhc: {
     title: "Blair Hack Club",
-    description: ""
+    description: "",
+    links: [
+      { label: "website", href: "https://blair.hackclub.com" },
+    ]
   },
   bhcscrapbook: {
     title: "Blair Hack Club's Scrapbook",
-    description: ""
+    description: "",
+    links: [
+      { label: "website", href: "https://blair.hackclub.com/scrapbook" },
+      { label: "github (site)", href: "https://github.com/blairhackclub/site-v2/tree/master/pages/scrapbook" },
+      { label: "github (scrappy)", href: "https://github.com/blairhackclub/scrappy" },
+    ]
   },
   codelet: {
     title: "Codelet",
-    description: ""
+    description: "",
+    links: [
+      { label: "website", href: "https://codelet.org" },
+    ]
   },
   jamcave: {
     title: "Jamcave",
-    description: ""
+    description: "",
+    links: [
+      { label: "website", href: "https://jamcave.linkaiwu.com" },
+      { label: "github", href: "https://github.com/linkai101/jamcave" },
+    ]
   },
   wordle: {
     title: "Wordle Archive",
-    description: ""
+    description: "",
+    links: [
+      { label: "website", href: "https://wordle.linkaiwu.com" },
+      { label: "github", href: "https://github.com/linkai101/wordle" },
+    ]
   },
   bongocat: {
     title: "Bongo Cat",
-    description: ""
+    description: "",
+    links: [
+      { label: "website", href: "https://bongocat.linkaiwu.com" },
+      { label: "github", href: "https://github.com/linkai101/bongocat" },
+    ]
   },
 }
 
@@ -60,8 +86,8 @@ export default function PortfolioPage() {
   const [selectedProject, setSelectedProject] = React.useState<string|null>(null);
 
   return <>
-    <div className="p-6 container max-w-4xl">
-      <div className="flex">
+    <div className="px-6 pt-20 pb-6 container max-w-4xl">
+      {/* <div className="flex">
         <Link href="/">
           <div className="flex items-center gap-3">
             <div className="h-8 w-8 flex justify-center items-center bg-gradient-to-br from-theme-primary to-theme-background rounded-full overflow-hidden">
@@ -76,28 +102,28 @@ export default function PortfolioPage() {
             </span>
           </div>
         </Link>
-      </div>
+      </div> */}
 
-      <h1 className="text-4xl font-bold font-display mt-6">
+      <h1 className="text-4xl font-bold font-display">
         Portfolio
       </h1>
     </div>
     
     <div className="px-6 pt-8 pb-16 container max-w-4xl">
-      <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-8 shadow-md" onClick={() => setSelectedProject('polistat')}><Polistat/></div>
-        <div className="col-span-4 shadow-md" onClick={() => setSelectedProject('stemtothesky')}><StemtotheSky/></div>
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div className="md:col-span-8 shadow-md" onClick={() => setSelectedProject('polistat')}><Polistat/></div>
+        <div className="md:col-span-4 shadow-md" onClick={() => setSelectedProject('stemtothesky')}><StemtotheSky/></div>
 
-        <div className="col-span-3 shadow-md" onClick={() => setSelectedProject('bhcsite')}><BhcSite/></div>
-        <div className="col-span-6 shadow-md" onClick={() => setSelectedProject('bhcscrapbook')}><BhcScrapbook/></div>
-        <div className="col-span-3 shadow-md" onClick={() => setSelectedProject('codelet')}><Codelet/></div>
+        <div className="md:col-span-3 shadow-md" onClick={() => setSelectedProject('bhc')}><Bhc/></div>
+        <div className="md:col-span-6 shadow-md" onClick={() => setSelectedProject('bhcscrapbook')}><BhcScrapbook/></div>
+        <div className="md:col-span-3 shadow-md" onClick={() => setSelectedProject('codelet')}><Codelet/></div>
 
-        <div className="col-span-6 shadow-md" onClick={() => setSelectedProject('jamcave')}><Jamcave/></div>
-        <div className="col-span-6 shadow-md" onClick={() => setSelectedProject('wordle')}><Wordle/></div>
+        <div className="md:col-span-6 shadow-md" onClick={() => setSelectedProject('jamcave')}><Jamcave/></div>
+        <div className="md:col-span-6 shadow-md" onClick={() => setSelectedProject('wordle')}><Wordle/></div>
 
-        <div className="col-span-4 shadow-md" onClick={() => setSelectedProject('bongocat')}><BongoCat/></div>
-        <div className="bg-theme-primaryVariant/25 col-span-4 shadow-inner"></div>
-        <div className="bg-theme-primaryVariant/25 col-span-4 shadow-inner"></div>
+        <div className="md:col-span-4 shadow-md" onClick={() => setSelectedProject('bongocat')}><BongoCat/></div>
+        <div className="hidden md:block bg-theme-primaryVariant/25 md:col-span-4 shadow-inner"></div>
+        <div className="hidden md:block bg-theme-primaryVariant/25 md:col-span-4 shadow-inner"></div>
       </div>
     </div>
 
@@ -116,7 +142,7 @@ export default function PortfolioPage() {
               {
                 selectedProject === 'polistat' ? <Polistat/>
                 : selectedProject === 'stemtothesky' ? <StemtotheSky/>
-                : selectedProject === 'bhcsite' ? <BhcSite/>
+                : selectedProject === 'bhc' ? <Bhc/>
                 : selectedProject === 'bhcscrapbook' ? <BhcScrapbook/>
                 : selectedProject === 'codelet' ? <Codelet/>
                 : selectedProject === 'jamcave' ? <Jamcave/>
@@ -128,7 +154,7 @@ export default function PortfolioPage() {
 
             <div className="p-8">
               <div className="flex items-end gap-4">
-                <h2 className="flex-1 text-2xl font-bold">
+                <h2 className="flex-1 text-2xl font-bold font-display">
                   {projects[selectedProject].title}
                 </h2>
                 <div className="flex gap-2.5">
@@ -164,7 +190,7 @@ export default function PortfolioPage() {
           </div>
 
           <button
-            className="p-2 absolute -top-14 right-0 text-theme-onBackground/40 hover:text-theme-primary bg-theme-surface/50 hover:bg-theme-surface/75 rounded-full transition ease-in-out duration-300"
+            className="p-2 absolute -top-14 right-0 text-theme-onBackground/40 hover:text-theme-primary bg-theme-surface/50 hover:bg-theme-surface/75 rounded-full z-50 transition ease-in-out duration-300"
             onClick={() => setSelectedProject(null)}
           >
             <FiX size="1.5rem" className="stroke-[2.5px]"/>

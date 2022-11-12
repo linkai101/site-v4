@@ -9,7 +9,7 @@ export default function HomePage() {
     <div>
       <div
         className="
-          min-h-screen px-4 pt-8 pb-32
+          min-h-screen px-4 pt-8 pb-24
           flex flex-col items-center justify-center gap-12
           sticky top-0
         "
@@ -22,14 +22,14 @@ export default function HomePage() {
         </div>
 
         <div className="flex flex-col items-center">
-          <h1 className="text-5xl font-black font-display drop-shadow-xl">
+          <h1 className="text-5xl font-black font-display drop-shadow-lg">
             Linkai Wu
           </h1>
 
-          <input
+          {/* <input
             className="w-64 px-3 pt-[0.425rem] pb-[0.325rem] text-sm bg-theme-primaryVariant/50 rounded-full mt-2"
             // placeholder="Start typing..."
-          />
+          /> */}
         </div>
 
         <div className="absolute bottom-8 px-1 pt-[0.325rem] pb-[0.175rem] text-xl text-theme-primary bg-black/5 rounded-full">
@@ -72,23 +72,68 @@ export default function HomePage() {
           </h2>
           <p className="font-light mt-2">
             I'm a high school student based in Maryland at Montgomery Blair High School.
-            I love to explore novel ways that people can interact with technology and use it to do great things.
+            I'm on a journey to explore ways that we can use tech to address the world's most pressing issues.
             Welcome to my corner of the internet!
           </p>
 
-          <h3 className="text-lg font-bold font-display italic mt-10">
-            what i do
-          </h3>
-          <div className="grid grid-cols-3 gap-4 mt-2">
-            <div className="h-28 bg-theme-primaryVariant/25 rounded-md"/>
-            <div className="h-28 bg-theme-primaryVariant/25 rounded-md"/>
-            <div className="h-28 bg-theme-primaryVariant/25 rounded-md"/>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+            <div className="p-4 bg-theme-primaryVariant/25 rounded-md">
+              <h3 className="text-xl font-bold font-display italic">
+                I code.
+              </h3>
+              <p className="text-sm font-light mt-0.5">
+                I mostly do web dev, but I'm also interested in exploring other novel ways that we can interact with tech, like VR/AR.
+              </p>
+              <p className="text-xs font-medium italic mt-1.5">
+                Check out my portfolio to see some of my best projects!
+              </p>
+
+              <div className="flex gap-2 mt-2.5">
+                <Link href="/portfolio">
+                  <div className="px-2 py-1 text-xs text-theme-primary font-semibold hover:underline border-2 decoration-[1.5px] decoration-theme-primary border-theme-primary rounded-full">
+                    <span>my portfolio</span>
+                  </div>
+                </Link>
+
+                <Link href="https://github.com/linkai101" target="_blank" rel="noopener noreferrer">
+                  <div className="px-2 py-1 text-xs text-theme-primary font-semibold hover:underline border-2 decoration-[1.5px] decoration-theme-primary border-theme-primary rounded-full">
+                    <span>my github</span>
+                  </div>
+                </Link>
+              </div>
+            </div>
+
+            <div className="p-4 bg-theme-primaryVariant/25 rounded-md">
+              <h3 className="text-xl font-bold font-display italic">
+                I teach.
+              </h3>
+              <p className="text-sm font-light mt-0.5">
+                &gt;<br/>
+                &gt;<br/>
+                &gt;<br/>
+                &gt;<br/>
+                &gt;
+              </p>
+            </div>
+
+            <div className="p-4 bg-theme-primaryVariant/25 rounded-md">
+              <h3 className="text-xl font-bold font-display italic">
+                I learn.
+              </h3>
+              <p className="text-sm font-light mt-0.5">
+                &gt;<br/>
+                &gt;<br/>
+                &gt;<br/>
+                &gt;<br/>
+                &gt;
+              </p>
+            </div>
           </div>
 
-          <h3 className="text-lg font-bold font-display italic mt-10">
+          <h3 className="text-lg font-bold font-display mt-12">
             check out...
           </h3>
-          <div className="grid grid-cols-3 gap-4 mt-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
             <Link href="https://mini.blairhacks.com" target="_blank" rel="noopener noreferrer">
               <div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md">
                 <div className="flex-1">
@@ -150,10 +195,10 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <h3 className="text-lg font-bold font-display mt-10">
+          <h3 className="text-lg font-bold font-display mt-12">
             wanna chat?
           </h3>
-          <div className="flex gap-3 mt-2">
+          <div className="flex gap-3 overflow-x-auto overflow-y-hidden mt-2">
             <Link href="mailto:linkai@linkaiwu.com">
               <div className="px-2 h-12 flex items-end justify-center gap-2.5 rounded-lg bg-theme-primaryVariant/25">
                 <FiMail size="2.15rem" className="text-theme-primary stroke-[2.2px]"/>
