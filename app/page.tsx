@@ -1,5 +1,8 @@
 
+'use client';
+
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import { FaAngleDown, FaRegStar } from 'react-icons/fa';
 import { FiMail, FiGithub, FiLinkedin, FiYoutube } from 'react-icons/fi';
@@ -135,7 +138,7 @@ export default function HomePage() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
             <Link href="https://mini.blairhacks.com" target="_blank" rel="noopener noreferrer">
-              <div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md">
+              <motion.div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md" whileHover={{ scale: 1.01 }}>
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold">
                     BlairHacks Mini '22
@@ -151,11 +154,11 @@ export default function HomePage() {
                     className="h-10 aspect-square rounded-md"
                   />
                 </div>
-              </div>
+              </motion.div>
             </Link>
 
             <Link href="https://blair.hackclub.com" target="_blank" rel="noopener noreferrer">
-              <div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md">
+              <motion.div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md" whileHover={{ scale: 1.01 }}>
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold">
                     Blair Hack Club
@@ -171,11 +174,11 @@ export default function HomePage() {
                     className="h-10 aspect-square rounded-md"
                   />
                 </div>
-              </div>
+              </motion.div>
             </Link>
 
             <Link href="https://polistat.mbhs.edu" target="_blank" rel="noopener noreferrer">
-              <div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md">
+              <motion.div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md" whileHover={{ scale: 1.01 }}>
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold">
                     ORACLE of Blair 2022
@@ -191,7 +194,7 @@ export default function HomePage() {
                     className="h-10 aspect-square rounded-md"
                   />
                 </div>
-              </div>
+              </motion.div>
             </Link>
           </div>
 
@@ -200,7 +203,7 @@ export default function HomePage() {
           </h3>
           <div className="flex gap-3 overflow-x-auto overflow-y-hidden mt-2">
             <Link href="mailto:linkai@linkaiwu.com">
-              <div className="px-2 h-12 flex items-end justify-center gap-2.5 rounded-lg bg-theme-primaryVariant/25">
+              <div className="px-2 h-12 flex items-end justify-center gap-2.5 rounded-lg bg-theme-primaryVariant/25 hover:bg-theme-primaryVariant/40">
                 <FiMail size="2.15rem" className="text-theme-primary stroke-[2.2px]"/>
                 <div className="py-0.5">
                   <p className="text-xs text-theme-primary font-extrabold">
@@ -214,19 +217,19 @@ export default function HomePage() {
             </Link>
 
             <Link href="https://github.com/linkai101" target="_blank" rel="noopener noreferrer">
-              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25">
+              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25 hover:bg-theme-primaryVariant/40">
                 <FiGithub size="2.25rem" className="text-theme-primary stroke-[2.2px]"/>
               </div>
             </Link>
 
             <Link href="https://linkedin.com/in/linkaiwu" target="_blank" rel="noopener noreferrer">
-              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25">
+              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25 hover:bg-theme-primaryVariant/40">
                 <FiLinkedin size="2rem" className="text-theme-primary stroke-[2.2px] mb-[0.1rem]"/>
               </div>
             </Link>
             
             <Link href="https://youtube.com/@linkai" target="_blank" rel="noopener noreferrer">
-              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25">
+              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25 hover:bg-theme-primaryVariant/40">
                 <FiYoutube size="2.15rem" className="text-theme-primary stroke-[2.2px] -mb-[0.1rem]"/>
               </div>
             </Link>

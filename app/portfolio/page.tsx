@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-// import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import Polistat from './Polistat';
 import StemtotheSky from './StemtotheSky';
@@ -111,98 +111,153 @@ export default function PortfolioPage() {
     
     <div className="px-6 pt-8 pb-16 container max-w-4xl">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-        <div className="md:col-span-8 shadow-md" onClick={() => setSelectedProject('polistat')}><Polistat/></div>
-        <div className="md:col-span-4 shadow-md" onClick={() => setSelectedProject('stemtothesky')}><StemtotheSky/></div>
+        <motion.div
+          className="md:col-span-8 shadow-md"
+          onClick={() => setSelectedProject('polistat')}
+          whileHover={{ scale: 1.01 }}
+        >
+          <Polistat/>
+        </motion.div>
+        <motion.div
+          className="md:col-span-4 shadow-md"
+          onClick={() => setSelectedProject('stemtothesky')}
+          whileHover={{ scale: 1.01 }}
+        >
+          <StemtotheSky/>
+        </motion.div>
 
-        <div className="md:col-span-3 shadow-md" onClick={() => setSelectedProject('bhc')}><Bhc/></div>
-        <div className="md:col-span-6 shadow-md" onClick={() => setSelectedProject('bhcscrapbook')}><BhcScrapbook/></div>
-        <div className="md:col-span-3 shadow-md" onClick={() => setSelectedProject('codelet')}><Codelet/></div>
+        <motion.div
+          className="md:col-span-3 shadow-md"
+          onClick={() => setSelectedProject('bhc')}
+          whileHover={{ scale: 1.01 }}
+        >
+          <Bhc/>
+        </motion.div>
+        <motion.div
+          className="md:col-span-6 shadow-md"
+          onClick={() => setSelectedProject('bhcscrapbook')}
+          whileHover={{ scale: 1.01 }}
+        >
+          <BhcScrapbook/>
+        </motion.div>
+        <motion.div
+          className="md:col-span-3 shadow-md"
+          onClick={() => setSelectedProject('codelet')}
+          whileHover={{ scale: 1.01 }}
+        >
+          <Codelet/>
+        </motion.div>
 
-        <div className="md:col-span-6 shadow-md" onClick={() => setSelectedProject('jamcave')}><Jamcave/></div>
-        <div className="md:col-span-6 shadow-md" onClick={() => setSelectedProject('wordle')}><Wordle/></div>
+        <motion.div
+          className="md:col-span-6 shadow-md"
+          onClick={() => setSelectedProject('jamcave')}
+          whileHover={{ scale: 1.01 }}
+        >
+          <Jamcave/>
+        </motion.div>
+        <motion.div
+          className="md:col-span-6 shadow-md"
+          onClick={() => setSelectedProject('wordle')}
+          whileHover={{ scale: 1.01 }}
+        >
+          <Wordle/>
+        </motion.div>
 
-        <div className="md:col-span-4 shadow-md" onClick={() => setSelectedProject('bongocat')}><BongoCat/></div>
-        <div className="hidden md:block bg-theme-primaryVariant/25 md:col-span-4 shadow-inner"></div>
-        <div className="hidden md:block bg-theme-primaryVariant/25 md:col-span-4 shadow-inner"></div>
+        <motion.div
+          className="md:col-span-4 shadow-md"
+          onClick={() => setSelectedProject('bongocat')}
+          whileHover={{ scale: 1.01 }}
+        >
+          <BongoCat/>
+        </motion.div>
+        <div
+          className="hidden md:block bg-theme-primaryVariant/25 md:col-span-4 shadow-inner"></div>
+        <div
+          className="hidden md:block bg-theme-primaryVariant/25 md:col-span-4 shadow-inner"></div>
       </div>
     </div>
 
-
-    {selectedProject && <>
-      <div
-        className="px-8 pb-12 pt-36 fixed inset-0 bg-black/20 overflow-y-auto z-40"
-        onClick={() => setSelectedProject(null)}
-      >
-        <section
-          className="container max-w-3xl relative z-40"
-          onClick={e => e.stopPropagation()}
+    <AnimatePresence>
+      {selectedProject && <>
+        <motion.div
+          className="px-8 pb-12 pt-36 fixed inset-0 bg-black/20 overflow-y-auto z-40"
+          onClick={() => setSelectedProject(null)}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
         >
-          <div className="bg-theme-surface/[0.97] backdrop-blur-sm drop-shadow-md rounded-xl overflow-hidden">
-            <div className="h-48">
-              {
-                selectedProject === 'polistat' ? <Polistat/>
-                : selectedProject === 'stemtothesky' ? <StemtotheSky/>
-                : selectedProject === 'bhc' ? <Bhc/>
-                : selectedProject === 'bhcscrapbook' ? <BhcScrapbook/>
-                : selectedProject === 'codelet' ? <Codelet/>
-                : selectedProject === 'jamcave' ? <Jamcave/>
-                : selectedProject === 'wordle' ? <Wordle/>
-                : selectedProject === 'bongocat' ? <BongoCat/>
-                : null
-              }
-            </div>
-
-            <div className="p-8">
-              <div className="flex items-end gap-4">
-                <h2 className="flex-1 text-2xl font-bold font-display">
-                  {projects[selectedProject].title}
-                </h2>
-                <div className="flex gap-2.5">
-                  {projects[selectedProject].links?.map((link: { label: string; href: string; }) => 
-                    <Link href={link.href} target="_blank" rel="noopener noreferrer">
-                      <div className="px-2 py-1 text-xs text-theme-primary font-semibold hover:underline border-2 decoration-[1.5px] decoration-theme-primary border-theme-primary rounded-full" key={link.label}>
-                        <span>{link.label}</span>
-                      </div>
-                    </Link>
-                  )}
-                </div>
-              </div>
-              <p className="text-md font-light">
-                {projects[selectedProject].description}
-              </p>
-
-              {/* <h3 className="text-lg font-bold mt-8">
-                Related blog posts
-              </h3>
-              <div className="flex gap-4 mt-1.5">
-                <div className="h-20 w-56 bg-theme-primaryVariant/50 rounded-md"/>
-              </div>
-
-              <h3 className="text-lg font-bold mt-8">
-                Tags
-              </h3>
-              <div className="flex gap-2.5 mt-1.5">
-                <div className="h-6 w-20 bg-theme-primaryVariant/50 rounded-full"/>
-                <div className="h-6 w-20 bg-theme-primaryVariant/50 rounded-full"/>
-                <div className="h-6 w-20 bg-theme-primaryVariant/50 rounded-full"/>
-              </div> */}
-            </div>
-          </div>
-
-          <button
-            className="p-2 absolute -top-14 right-0 text-theme-onBackground/40 hover:text-theme-primary bg-theme-surface/50 hover:bg-theme-surface/75 rounded-full z-50 transition ease-in-out duration-300"
-            onClick={() => setSelectedProject(null)}
+          <section
+            className="container max-w-3xl relative z-40"
+            onClick={e => e.stopPropagation()}
           >
-            <FiX size="1.5rem" className="stroke-[2.5px]"/>
-          </button>
-        </section>
-      </div>
-      
-      <style jsx global>{`
-      body {
-        overflow: hidden;
-      }
-      `}</style>
-    </>}
+            <div className="bg-theme-surface/[0.97] backdrop-blur-sm drop-shadow-md rounded-xl overflow-hidden">
+              <div className="h-48">
+                {
+                  selectedProject === 'polistat' ? <Polistat/>
+                  : selectedProject === 'stemtothesky' ? <StemtotheSky/>
+                  : selectedProject === 'bhc' ? <Bhc/>
+                  : selectedProject === 'bhcscrapbook' ? <BhcScrapbook/>
+                  : selectedProject === 'codelet' ? <Codelet/>
+                  : selectedProject === 'jamcave' ? <Jamcave/>
+                  : selectedProject === 'wordle' ? <Wordle/>
+                  : selectedProject === 'bongocat' ? <BongoCat/>
+                  : null
+                }
+              </div>
+
+              <div className="p-8">
+                <div className="flex items-end gap-4">
+                  <h2 className="flex-1 text-2xl font-bold font-display">
+                    {projects[selectedProject].title}
+                  </h2>
+                  <div className="flex gap-2.5">
+                    {projects[selectedProject].links?.map((link: { label: string; href: string; }) => 
+                      <Link href={link.href} target="_blank" rel="noopener noreferrer">
+                        <div className="px-2 py-1 text-xs text-theme-primary font-semibold hover:underline border-2 decoration-[1.5px] decoration-theme-primary border-theme-primary rounded-full" key={link.label}>
+                          <span>{link.label}</span>
+                        </div>
+                      </Link>
+                    )}
+                  </div>
+                </div>
+                <p className="text-md font-light">
+                  {projects[selectedProject].description}
+                </p>
+
+                {/* <h3 className="text-lg font-bold mt-8">
+                  Related blog posts
+                </h3>
+                <div className="flex gap-4 mt-1.5">
+                  <div className="h-20 w-56 bg-theme-primaryVariant/50 rounded-md"/>
+                </div>
+
+                <h3 className="text-lg font-bold mt-8">
+                  Tags
+                </h3>
+                <div className="flex gap-2.5 mt-1.5">
+                  <div className="h-6 w-20 bg-theme-primaryVariant/50 rounded-full"/>
+                  <div className="h-6 w-20 bg-theme-primaryVariant/50 rounded-full"/>
+                  <div className="h-6 w-20 bg-theme-primaryVariant/50 rounded-full"/>
+                </div> */}
+              </div>
+            </div>
+
+            <button
+              className="p-2 absolute -top-14 right-0 text-theme-onBackground/40 hover:text-theme-primary bg-theme-surface/50 hover:bg-theme-surface/75 rounded-full z-50 transition ease-in-out duration-300"
+              onClick={() => setSelectedProject(null)}
+            >
+              <FiX size="1.5rem" className="stroke-[2.5px]"/>
+            </button>
+          </section>
+        </motion.div>
+        
+        <style jsx global>{`
+        body {
+          overflow: hidden;
+        }
+        `}</style>
+      </>}
+    </AnimatePresence>
   </>;
 }
