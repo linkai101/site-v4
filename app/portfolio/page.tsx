@@ -19,7 +19,7 @@ import { FiX } from 'react-icons/fi';
 const projects: { [id:string]: any; } = {
   polistat: {
     title: "ORACLE of Blair",
-    description: "",
+    description: "A project by '23 seniors at Montgomery Blair HS. Our political statistics class modeled the 2022 U.S. Senate and gubernatorial elections based on each race's demographics, voting history, and live polling data. I created the website and aided in the coordination of the project.",
     links: [
       { label: "website", href: "https://polistat.mbhs.edu" },
       { label: "github", href: "https://github.com/polistat/site-2022" },
@@ -34,14 +34,14 @@ const projects: { [id:string]: any; } = {
   },
   bhc: {
     title: "Blair Hack Club",
-    description: "",
+    description: "A creative coding club I founded at Montgomery Blair HS. We run workshops and have discussions on a variety of tech topics!",
     links: [
       { label: "website", href: "https://blair.hackclub.com" },
     ]
   },
   bhcscrapbook: {
     title: "Blair Hack Club's Scrapbook",
-    description: "",
+    description: "A project-sharing platform I made for Blair Hack Club where members can share updates on their personal projects and activities on Discord and the posts are displayed in an online scrapbook.",
     links: [
       { label: "website", href: "https://blair.hackclub.com/scrapbook" },
       { label: "github (site)", href: "https://github.com/blairhackclub/site-v2/tree/master/pages/scrapbook" },
@@ -50,14 +50,14 @@ const projects: { [id:string]: any; } = {
   },
   codelet: {
     title: "Codelet",
-    description: "",
+    description: "An ongoing project I started to share interactive computer science lessons, games, and educator tools to raise exposure for creative expression in CS education.",
     links: [
       { label: "website", href: "https://codelet.org" },
     ]
   },
   jamcave: {
     title: "Jamcave",
-    description: "",
+    description: "A collaborative whiteboard app that lets you create and share notes with others in real time.",
     links: [
       { label: "website", href: "https://jamcave.linkaiwu.com" },
       { label: "github", href: "https://github.com/linkai101/jamcave" },
@@ -65,7 +65,7 @@ const projects: { [id:string]: any; } = {
   },
   wordle: {
     title: "Wordle Archive",
-    description: "",
+    description: "A clone of NYT's Wordle game, with playable records of all current and past Wordle challenges.",
     links: [
       { label: "website", href: "https://wordle.linkaiwu.com" },
       { label: "github", href: "https://github.com/linkai101/wordle" },
@@ -73,7 +73,7 @@ const projects: { [id:string]: any; } = {
   },
   bongocat: {
     title: "Bongo Cat",
-    description: "",
+    description: "A bongo cat instrument emulator with a playable virtual piano, bongos, and drumset. This was inspired by the popular bongo cat meme.",
     links: [
       { label: "website", href: "https://bongocat.linkaiwu.com" },
       { label: "github", href: "https://github.com/linkai101/bongocat" },
@@ -118,13 +118,14 @@ export default function PortfolioPage() {
         >
           <Polistat/>
         </motion.div>
-        <motion.div
+        {/* <motion.div
           className="md:col-span-4 shadow-md"
           onClick={() => setSelectedProject('stemtothesky')}
           whileHover={{ scale: 1.01 }}
         >
           <StemtotheSky/>
-        </motion.div>
+        </motion.div> */}
+        <div className="hidden md:block bg-theme-primaryVariant/25 md:col-span-4 shadow-inner"></div>
 
         <motion.div
           className="md:col-span-3 shadow-md"
@@ -170,10 +171,8 @@ export default function PortfolioPage() {
         >
           <BongoCat/>
         </motion.div>
-        <div
-          className="hidden md:block bg-theme-primaryVariant/25 md:col-span-4 shadow-inner"></div>
-        <div
-          className="hidden md:block bg-theme-primaryVariant/25 md:col-span-4 shadow-inner"></div>
+        <div className="hidden md:block bg-theme-primaryVariant/25 md:col-span-4 shadow-inner"></div>
+        <div className="hidden md:block bg-theme-primaryVariant/25 md:col-span-4 shadow-inner"></div>
       </div>
     </div>
 
@@ -207,8 +206,8 @@ export default function PortfolioPage() {
               </div>
 
               <div className="p-8">
-                <div className="flex items-end gap-4">
-                  <h2 className="flex-1 text-2xl font-bold font-display">
+                <div className="flex flex-col sm:flex-row sm:items-end gap-2 sm:gap-4">
+                  <h2 className="flex-1 text-2xl font-bold font-display -mb-2">
                     {projects[selectedProject].title}
                   </h2>
                   <div className="flex gap-2.5">
@@ -221,7 +220,7 @@ export default function PortfolioPage() {
                     )}
                   </div>
                 </div>
-                <p className="text-md font-light">
+                <p className="text-md font-light mt-4 sm:mt-2.5">
                   {projects[selectedProject].description}
                 </p>
 

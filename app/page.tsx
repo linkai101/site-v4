@@ -85,7 +85,7 @@ export default function HomePage() {
                 I code.
               </h3>
               <p className="text-sm font-light mt-0.5">
-                I mostly do web dev, but I'm also interested in exploring other novel ways that we can interact with tech, like VR/AR.
+                I mostly do web dev! I've also coded random projects in my free time, including bots, games, and more.
               </p>
               <p className="text-xs font-medium italic mt-1.5">
                 Check out my portfolio to see some of my best projects!
@@ -111,12 +111,18 @@ export default function HomePage() {
                 I teach.
               </h3>
               <p className="text-sm font-light mt-0.5">
-                &gt;<br/>
-                &gt;<br/>
-                &gt;<br/>
-                &gt;<br/>
-                &gt;
+                Only ~50% of US high schools teach CS. I'm addressing that by mentoring students and running coding workshops.
               </p>
+              <p className="text-xs font-medium italic mt-1.5">
+                I've started Codelet to provide free interactive resources to learn how to code.
+              </p>
+              <div className="flex gap-2 mt-2.5">
+                <Link href="https://codelet.org" target="_blank" rel="noopener noreferrer">
+                  <div className="px-2 py-1 text-xs text-theme-primary font-semibold hover:underline border-2 decoration-[1.5px] decoration-theme-primary border-theme-primary rounded-full">
+                    <span>codelet</span>
+                  </div>
+                </Link>
+              </div>
             </div>
 
             <div className="p-4 bg-theme-primaryVariant/25 rounded-md">
@@ -124,11 +130,7 @@ export default function HomePage() {
                 I learn.
               </h3>
               <p className="text-sm font-light mt-0.5">
-                &gt;<br/>
-                &gt;<br/>
-                &gt;<br/>
-                &gt;<br/>
-                &gt;
+                I'm currently in a senior in a high school STEM program. I'm interested in pursuing CS and exploring different ways that people interact with tech, like VR/AR.
               </p>
             </div>
           </div>
@@ -236,7 +238,7 @@ export default function HomePage() {
           </div>
 
           <p className="text-xs font-light italic mt-10">
-            Last updated: Nov 11, 2022
+            Last updated: Nov 13, 2022
           </p>
         </div>
       </div>

@@ -10,8 +10,7 @@ export default function RootLayout({
   return (
     <html>
       <head>
-        <title>Linkai Wu</title>
-        <meta name="description" content="by @linkai101 on github" />
+        <meta property="og:site_name" content="Linkai Wu" key="ogsitename"/>
       </head>
       <body className="bg-theme-background text-theme-onBackground">
         <Navbar/>
