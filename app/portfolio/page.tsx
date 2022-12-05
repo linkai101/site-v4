@@ -118,15 +118,13 @@ export default function PortfolioPage() {
         >
           <Polistat/>
         </motion.div>
-        {/* <motion.div
+        <motion.div
           className="md:col-span-4 shadow-md"
           onClick={() => setSelectedProject('stemtothesky')}
           whileHover={{ scale: 1.01 }}
         >
           <StemtotheSky/>
-        </motion.div> */}
-        <div className="hidden md:block bg-theme-primaryVariant/25 md:col-span-4 shadow-inner"></div>
-
+        </motion.div>
         <motion.div
           className="md:col-span-3 shadow-md"
           onClick={() => setSelectedProject('bhc')}
