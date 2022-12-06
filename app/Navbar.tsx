@@ -44,8 +44,8 @@ export default function Navbar() {
           <div className="flex items-center gap-3">
             <div className="h-8 w-8 flex justify-center items-center shrink-0 bg-gradient-to-br from-theme-primary to-theme-background rounded-full overflow-hidden">
               <img
-                // src="/assets/linkai-transparent.png"
-                src="/assets/memoji.png"
+                src="/assets/linkai-transparent.png"
+                // src="/assets/memoji.png"
               />
             </div>
 

@@ -19,8 +19,8 @@ export default function HomePage() {
       >
         <div className="h-64 w-64 flex justify-center items-center bg-gradient-to-br from-theme-primary to-theme-background rounded-full overflow-hidden">
           <img
-            // src="/assets/linkai-transparent.png"
-            src="/assets/memoji.png"
+            src="/assets/linkai-transparent.png"
+            // src="/assets/memoji.png"
           />
         </div>
 
