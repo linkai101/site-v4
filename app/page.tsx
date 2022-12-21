@@ -139,14 +139,14 @@ export default function HomePage() {
             check out...
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
-            <Link href="https://mini.blairhacks.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://6.blairhacks.com" target="_blank" rel="noopener noreferrer">
               <motion.div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md" whileHover={{ scale: 1.01 }}>
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold">
-                    BlairHacks Mini '22
+                    BlairHacks_6
                   </h4>
                   <p className="text-xs leading-4 mt-0.5">
-                    A free, IRL mini hackathon. Dec 10, 2022 @ 10AM-6PM. Register now!
+                    A free, 24-hour hackathon for DMV high schoolers. Feb 17-18, 2023 @ Montgomery Blair HS.
                   </p>
                 </div>
 
@@ -159,7 +159,7 @@ export default function HomePage() {
               </motion.div>
             </Link>
 
-            <Link href="https://blair.hackclub.com" target="_blank" rel="noopener noreferrer">
+            {/* <Link href="https://blair.hackclub.com" target="_blank" rel="noopener noreferrer">
               <motion.div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md" whileHover={{ scale: 1.01 }}>
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold">
@@ -177,7 +177,7 @@ export default function HomePage() {
                   />
                 </div>
               </motion.div>
-            </Link>
+            </Link> */}
 
             <Link href="https://polistat.mbhs.edu" target="_blank" rel="noopener noreferrer">
               <motion.div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md" whileHover={{ scale: 1.01 }}>
@@ -193,6 +193,28 @@ export default function HomePage() {
                 <div>
                   <img
                     src="/assets/oracle.png"
+                    className="h-10 aspect-square rounded-md"
+                  />
+                </div>
+              </motion.div>
+            </Link>
+            
+            <Link href="https://stemtothesky.org" target="_blank" rel="noopener noreferrer">
+              <motion.div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md" whileHover={{ scale: 1.01 }}>
+                <div className="flex-1">
+                  <h4 className="text-sm font-semibold">
+                    {/* ORACLE of Blair 2022 */}
+                    STEM to the Sky
+                  </h4>
+                  <p className="text-xs leading-4 mt-0.5">
+                    {/* A project to predict the 2022 midterm elections. Created by '23 seniors at MBHS. */}
+                    Showcasing diverse pathways and careers in STEM through interviews and events. I designed their website!
+                  </p>
+                </div>
+
+                <div>
+                  <img
+                    src="/assets/stts.png"
                     className="h-10 aspect-square rounded-md"
                   />
                 </div>
@@ -238,7 +260,7 @@ export default function HomePage() {
           </div>
 
           <p className="text-xs font-light italic mt-10">
-            Last updated: Nov 13, 2022
+            Last updated: Dec 21, 2022
           </p>
         </div>
       </div>
