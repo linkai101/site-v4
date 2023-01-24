@@ -15,6 +15,7 @@ export default function HomePage() {
           min-h-screen px-4 pt-8 pb-24
           flex flex-col items-center justify-center gap-12
           sticky top-0
+          bg-[url('/assets/background.jpg')] bg-cover bg-center
         "
       >
         <div className="h-64 w-64 flex justify-center items-center bg-gradient-to-br from-theme-primary to-theme-background rounded-full overflow-hidden">
@@ -25,7 +26,7 @@ export default function HomePage() {
         </div>
 
         <div className="flex flex-col items-center">
-          <h1 className="text-5xl font-black font-display drop-shadow-lg">
+          <h1 className="text-5xl text-white font-black font-display drop-shadow-xl">
             Linkai Wu
           </h1>
 
@@ -43,7 +44,7 @@ export default function HomePage() {
       <div className="h-48"/>
     </div>
 
-    <div className="px-8 relative -mt-40">
+    <div className="px-8 relative -mt-36">
       <div
         className="
           container max-w-4xl
@@ -71,7 +72,7 @@ export default function HomePage() {
 
         <div className="p-12">
           <h2 className="text-2xl font-extrabold font-display">
-            hey! i'm linkai.
+            Hey! I'm Linkai.
           </h2>
           <p className="font-light mt-2">
             I'm a high school student based in Maryland at Montgomery Blair High School.
@@ -136,7 +137,7 @@ export default function HomePage() {
           </div>
 
           <h3 className="text-lg font-bold font-display mt-12">
-            check out...
+            Check out...
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
             <Link href="https://6.blairhacks.com" target="_blank" rel="noopener noreferrer">
@@ -146,7 +147,7 @@ export default function HomePage() {
                     BlairHacks_6
                   </h4>
                   <p className="text-xs leading-4 mt-0.5">
-                    A free, 24-hour hackathon for DMV high schoolers. Feb 17-18, 2023 @ Montgomery Blair HS.
+                    A free, 24-hour hackathon for DMV high schoolers. Feb 18-119, 2023 @ Montgomery Blair HS.
                   </p>
                 </div>
 
@@ -223,7 +224,7 @@ export default function HomePage() {
           </div>
 
           <h3 className="text-lg font-bold font-display mt-12">
-            wanna chat?
+            Wanna chat?
           </h3>
           <div className="flex gap-3 overflow-x-auto overflow-y-hidden mt-2">
             <Link href="mailto:linkai@linkaiwu.com">
@@ -260,7 +261,7 @@ export default function HomePage() {
           </div>
 
           <p className="text-xs font-light italic mt-10">
-            Last updated: Dec 21, 2022
+            Last updated: Jan 23, 2023
           </p>
         </div>
       </div>

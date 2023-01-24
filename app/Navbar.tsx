@@ -24,7 +24,7 @@ export default function Navbar() {
 //     </ul>
 //   </nav>;
 
-  return <nav className="absolute top-0 w-full z-40 bg-theme-background/90 backdrop-blur-sm">
+  return <nav className="absolute top-0 w-full z-40"> {/*bg-theme-background/90 backdrop-blur-sm*/}
     <div className="container max-w-4xl px-6 py-6 pb-2 flex items-center">
       <motion.div
         initial={{

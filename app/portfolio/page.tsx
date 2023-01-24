@@ -205,7 +205,7 @@ export default function PortfolioPage() {
 
               <div className="p-8">
                 <div className="flex flex-col sm:flex-row sm:items-end gap-2 sm:gap-4">
-                  <h2 className="flex-1 text-2xl font-bold font-display -mb-2">
+                  <h2 className="flex-1 text-2xl font-bold -mb-2">
                     {projects[selectedProject].title}
                   </h2>
                   <div className="flex gap-2.5">

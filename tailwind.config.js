@@ -20,8 +20,8 @@ module.exports = {
         theme: {
           primary: "#81A4CD",
           primaryVariant: "#DBE4EE",
-          secondary: "#DEB841",
-          secondaryVariant: "#EFCB68",
+          // secondary: "#DEB841",
+          // secondaryVariant: "#EFCB68",
           background: "#F5FEFD",
           surface: "#F5FEFD", //#FBFCF8
           // error: "",
