@@ -26,7 +26,7 @@ export default function HomePage() {
         </div>
 
         <div className="flex flex-col items-center">
-          <h1 className="text-5xl text-white font-black font-display drop-shadow-xl">
+          <h1 className="text-4xl md:text-5xl text-white font-black font-display drop-shadow-xl">
             Linkai Wu
           </h1>
 
@@ -44,7 +44,7 @@ export default function HomePage() {
       <div className="h-48"/>
     </div>
 
-    <div className="px-8 relative -mt-36">
+    <div className="px-4 relative -mt-40">
       <div
         className="
           container max-w-4xl
@@ -70,7 +70,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="p-12">
+        <div className="p-8 md:p-12">
           <h2 className="text-2xl font-extrabold font-display">
             Hey! I'm Linkai.
           </h2>

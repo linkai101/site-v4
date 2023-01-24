@@ -27,7 +27,7 @@ const projects: { [id:string]: any; } = {
   },
   stemtothesky: {
     title: "STEM to the Sky's website",
-    description: "",
+    description: "A student-led nonprofit dedicated to showcasing careers, fields, and opportunities in STEM through interviews and events with professionals. I designed and developed the website!",
     links: [
       { label: "website", href: "https://stemtothesky.org" },
     ]
@@ -177,7 +177,7 @@ export default function PortfolioPage() {
     <AnimatePresence>
       {selectedProject && <>
         <motion.div
-          className="px-8 pb-12 pt-36 fixed inset-0 bg-black/20 overflow-y-auto z-40"
+          className="px-4 pb-12 pt-36 fixed inset-0 bg-black/20 overflow-y-auto z-40"
           onClick={() => setSelectedProject(null)}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
