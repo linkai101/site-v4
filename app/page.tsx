@@ -147,7 +147,7 @@ export default function HomePage() {
                     BlairHacks_6
                   </h4>
                   <p className="text-xs leading-4 mt-0.5">
-                    A free, 24-hour hackathon for DMV high schoolers. Feb 18-119, 2023 @ Montgomery Blair HS.
+                    A free, 2-day hackathon for DMV high schoolers. Feb 18-19, 2023 @ Montgomery Blair HS.
                   </p>
                 </div>
 
