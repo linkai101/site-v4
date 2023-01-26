@@ -18,10 +18,10 @@ export default function HomePage() {
           bg-[url('/assets/background.jpg')] bg-cover bg-center
         "
       >
-        <div className="h-64 w-64 flex justify-center items-center bg-gradient-to-br from-theme-primary to-theme-background rounded-full overflow-hidden">
+        <div className="h-64 w-64 flex justify-center items-center bg-gradient-to-br from-theme-primary/95 to-theme-background/95 rounded-full overflow-hidden">
           <img
             src="/assets/linkai-transparent.png"
-            // src="/assets/memoji.png"
+            className="sepia-[.5]"
           />
         </div>
 
