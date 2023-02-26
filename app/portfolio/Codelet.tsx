@@ -1,5 +1,6 @@
+import ContentHead from './ContentHead';
 
-export default function Codelet() {
+export function Thumbnail() {
   return <div className="h-full py-4 flex items-center justify-center relative overflow-hidden">
     <img
       src="/assets/portfolio/codelet-bg.png"
@@ -10,4 +11,17 @@ export default function Codelet() {
       className="h-32"
     />
   </div>;
+}
+
+export function Content() {
+  return <ContentHead
+    title="Codelet"
+    links={[
+      { label: "website", href: "https://codelet.org" },
+    ]}
+  >
+    <p className="text-md font-light">
+      A work-in-progress project I started to share interactive computer science lessons, games, and educator tools to raise exposure for creative expression in CS education.
+    </p>
+  </ContentHead>;
 }

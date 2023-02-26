@@ -76,17 +76,16 @@ export default function HomePage() {
           </h2>
           <p className="font-light mt-2">
             I'm a high school student based in Maryland at Montgomery Blair High School.
-            I'm on a journey to explore ways that we can use tech to address the world's most pressing issues.
             Welcome to my corner of the internet!
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
             <div className="p-4 bg-theme-primaryVariant/25 rounded-md">
               <h3 className="text-xl font-bold font-display italic">
                 I code.
               </h3>
               <p className="text-sm font-light mt-0.5">
-                I mostly do web dev! I've also coded random projects in my free time, including bots, games, and more.
+                I mostly do web dev, but I also make bots, apps, games, and more!
               </p>
               <p className="text-xs font-medium italic mt-1.5">
                 Check out my portfolio to see some of my best projects!
@@ -109,32 +108,18 @@ export default function HomePage() {
 
             <div className="p-4 bg-theme-primaryVariant/25 rounded-md">
               <h3 className="text-xl font-bold font-display italic">
-                I teach.
+                I make.
               </h3>
               <p className="text-sm font-light mt-0.5">
-                Only ~50% of US high schools teach CS. I'm addressing that by mentoring students and running coding workshops.
               </p>
-              <p className="text-xs font-medium italic mt-1.5">
-                I've started Codelet to provide free interactive resources to learn how to code.
-              </p>
-              <div className="flex gap-2 mt-2.5">
-                <Link href="https://codelet.org" target="_blank" rel="noopener noreferrer">
-                  <div className="px-2 py-1 text-xs text-theme-primary font-semibold hover:underline border-2 decoration-[1.5px] decoration-theme-primary border-theme-primary rounded-full">
-                    <span>codelet</span>
-                  </div>
-                </Link>
-              </div>
             </div>
 
             <div className="p-4 bg-theme-primaryVariant/25 rounded-md">
               <h3 className="text-xl font-bold font-display italic">
                 I learn.
-              </h3>
-              <p className="text-sm font-light mt-0.5">
-                I'm currently in a senior in a high school STEM program. I'm interested in pursuing CS and exploring different ways that people interact with tech, like VR/AR.
-              </p>
+                </h3>
             </div>
-          </div>
+          </div> */}
 
           <h3 className="text-lg font-bold font-display mt-12">
             Check out...
@@ -147,7 +132,7 @@ export default function HomePage() {
                     BlairHacks_6
                   </h4>
                   <p className="text-xs leading-4 mt-0.5">
-                    A free, 2-day hackathon for DMV high schoolers. Feb 18-19, 2023 @ Montgomery Blair HS.
+                    A free, 2-day hackathon for DMV high schoolers. March 25-25, 2023.
                   </p>
                 </div>
 
@@ -261,7 +246,7 @@ export default function HomePage() {
           </div>
 
           <p className="text-xs font-light italic mt-10">
-            Last updated: Jan 23, 2023
+            Last updated: Feb 26, 2023
           </p>
         </div>
       </div>

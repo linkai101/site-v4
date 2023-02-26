@@ -1,5 +1,6 @@
+import ContentHead from './ContentHead';
 
-export default function Wordle() {
+export function Thumbnail() {
   return <div className="h-full py-4 bg-neutral-200/50 flex justify-center items-center relative overflow-hidden">
     <img
       src="/assets/portfolio/wordle.png"
@@ -10,4 +11,18 @@ export default function Wordle() {
       className="h-36 opacity-10"
     />
   </div>;
+}
+
+export function Content() {
+  return <ContentHead
+    title="Wordle Archive"
+    links={[
+      { label: "website", href: "https://wordle.linkaiwu.com" },
+      { label: "github", href: "https://github.com/linkai101/wordle" },
+    ]}
+  >
+    <p className="text-md font-light">
+      A clone of NYT's Wordle game, with playable records of all current and past Wordle challenges.
+    </p>
+  </ContentHead>;
 }

@@ -1,5 +1,6 @@
+import ContentHead from './ContentHead';
 
-export default function BhcSite() {
+export function Thumbnail() {
   return <div className="h-full py-8 flex justify-center items-center relative bg-red-500/90 overflow-hidden">
     {/* <img
       src="/assets/portfolio/bhc-flag.svg"
@@ -14,4 +15,17 @@ export default function BhcSite() {
       className="h-20 z-10 mt-2"
     />
   </div>;
+}
+
+export function Content() {
+  return <ContentHead
+    title="Blair Hack Club"
+    links={[
+      { label: "website", href: "https://blair.hackclub.com" },
+    ]}
+  >
+    <p className="text-md font-light">
+      A creative coding club I founded at Montgomery Blair HS. We run workshops and have discussions on a variety of tech topics!
+    </p>
+  </ContentHead>;
 }

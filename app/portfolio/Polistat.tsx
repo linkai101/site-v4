@@ -1,5 +1,6 @@
+import ContentHead from './ContentHead';
 
-export default function Polistat() {
+export function Thumbnail() {
   return <div
     className="h-full py-2 flex items-center justify-center relative bg-gradient-to-br from-blue-500/10 to-red-500/10 overflow-hidden"
   >
@@ -12,4 +13,18 @@ export default function Polistat() {
       className="h-44"
     />
   </div>;
+}
+
+export function Content() {
+  return <ContentHead
+    title="ORACLE of Blair"
+    links={[
+      { label: "website", href: "https://polistat.mbhs.edu" },
+      { label: "github", href: "https://github.com/polistat/site-2022" },
+    ]}
+  >
+    <p className="text-md font-light">
+      A project by '23 seniors at Montgomery Blair HS. Our political statistics class modeled the 2022 U.S. Senate and gubernatorial elections based on each race's demographics, voting history, and live polling data. I created the website and aided in the coordination of the project.
+    </p>
+  </ContentHead>;
 }

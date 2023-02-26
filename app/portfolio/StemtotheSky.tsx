@@ -1,5 +1,6 @@
+import ContentHead from './ContentHead';
 
-export default function StemtotheSky() {
+export function Thumbnail() {
   return <div className="h-full py-8 flex items-center justify-center relative overflow-hidden">
     <img
       src="/assets/portfolio/stts-bg.png"
@@ -10,4 +11,17 @@ export default function StemtotheSky() {
       className="h-24 rounded-full"
     />
   </div>;
+}
+
+export function Content() {
+  return <ContentHead
+    title="STEM to the Sky's website"
+    links={[
+      { label: "website", href: "https://stemtothesky.org" },
+    ]}
+  >
+    <p className="text-md font-light">
+      A student-led nonprofit dedicated to showcasing careers, fields, and opportunities in STEM through interviews and events with professionals. I designed and developed the website!
+    </p>
+  </ContentHead>;
 }
