@@ -2,17 +2,17 @@ import { createRef, useCallback, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { usePointToPointConstraint, useSphere } from '@react-three/cannon'
 
-const cursor = createRef()
+const cursor = createRef<any>()
 
-function useDragConstraint(child) {
+function useDragConstraint(child: any) {
   const [, , api] = usePointToPointConstraint(cursor, child, { pivotA: [0, 0, 0], pivotB: [0, 0, 0] })
   useEffect(() => void api.disable(), [])
-  const onPointerUp = useCallback((e) => {
+  const onPointerUp = useCallback((e:any) => {
     document.body.style.cursor = 'grab'
     e.target.releasePointerCapture(e.pointerId)
     api.disable()
   }, [])
-  const onPointerDown = useCallback((e) => {
+  const onPointerDown = useCallback((e:any) => {
     document.body.style.cursor = 'grabbing'
     e.stopPropagation()
     e.target.setPointerCapture(e.pointerId)

@@ -25,8 +25,8 @@ export default function Ragdoll() {
   )
 }
 
-function Floor(props) {
-  const [ref] = usePlane(() => ({ type: 'Static', ...props }))
+function Floor(props: any) {
+  const [ref] = usePlane<any>(() => ({ type: 'Static', ...props }))
   return (
     <mesh ref={ref} receiveShadow>
       {/* <planeGeometry args={[100, 100]} />
