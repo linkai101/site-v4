@@ -56,7 +56,7 @@ const projects: {
   },
 };
 
-export default function PortfolioPage({ searchParams }: { searchParams: { project?: string } }) {
+export default function PortfolioPage({ searchParams }: { searchParams: { project?: string|undefined } }) {
   const { project } = searchParams;
   const router = useRouter();
 
