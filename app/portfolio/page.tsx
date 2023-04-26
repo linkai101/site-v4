@@ -56,7 +56,8 @@ const projects: {
   },
 };
 
-export default function PortfolioPage({ searchParams }: { searchParams: { [key: string]: string } }) {
+// @ts-ignore
+export default function PortfolioPage({ searchParams }: { searchParams: { project?: string } }) {
   const { project } = searchParams;
   const router = useRouter();
 

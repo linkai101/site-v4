@@ -9,8 +9,8 @@ export default function Navbar() {
   const showLogo = usePathname() !== '/';
   const onPrimary = usePathname() === '/';
 
-  return <nav className="absolute top-0 w-full z-40"> {/*bg-theme-background/90 backdrop-blur-sm*/}
-    <div className={`container max-w-4xl px-6 py-6 pb-2 flex items-center ${onPrimary ? 'text-theme-onPrimary' : 'text-theme-onBackground'}`}>
+  return <nav className="absolute top-0 w-full z-40">
+    <div className={`container max-w-4xl px-6 py-6 pb-2 flex items-center overflow-x-auto ${onPrimary ? 'text-theme-onPrimary' : 'text-theme-onBackground'}`}>
       <div className="pr-6">
         <Link href="/">
           <div className="flex items-center">
@@ -54,6 +54,12 @@ export default function Navbar() {
         <Link href="/portfolio">
           <li className={`${onPrimary ? 'hover:text-theme-onPrimary' : 'hover:text-theme-onBackground'} hover:drop-shadow-sm cursor-pointer transition duration-200 ease-out hover:ease-in`}>
             portfolio
+          </li>
+        </Link>
+
+        <Link href="/blog">
+          <li className={`${onPrimary ? 'hover:text-theme-onPrimary' : 'hover:text-theme-onBackground'} hover:drop-shadow-sm cursor-pointer transition duration-200 ease-out hover:ease-in`}>
+            blog
           </li>
         </Link>
       </ul>
