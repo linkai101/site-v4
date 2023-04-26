@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { Thumbnail as PolistatThumbnail, Content as PolistatContent } from './Polistat';
@@ -15,8 +16,61 @@ import { Thumbnail as BongoCatThumbnail, Content as BongoCatContent } from './Bo
 
 import { FiX } from 'react-icons/fi';
 
-export default function PortfolioPage() {
-  const [selectedProject, setSelectedProject] = React.useState<string|null>(null);
+const projects: {
+  [key: string]: {
+    thumbnail: React.ReactNode,
+    content: React.ReactNode,
+  },
+} = {
+  polistat: {
+    thumbnail: <PolistatThumbnail/>,
+    content: <PolistatContent/>,
+  },
+  stemtothesky: {
+    thumbnail: <StemtotheSkyThumbnail/>,
+    content: <StemtotheSkyContent/>,
+  },
+  bh6: {
+    thumbnail: <BH6Thumbnail/>,
+    content: <BH6Content/>,
+  },
+  scrapbook: {
+    thumbnail: <ScrapbookThumbnail/>,
+    content: <ScrapbookContent/>,
+  },
+  bhmini: {
+    thumbnail: <BHMiniThumbnail/>,
+    content: <BHMiniContent/>,
+  },
+  jamcave: {
+    thumbnail: <JamcaveThumbnail/>,
+    content: <JamcaveContent/>,
+  },
+  wordle: {
+    thumbnail: <WordleThumbnail/>,
+    content: <WordleContent/>,
+  },
+  bongocat: {
+    thumbnail: <BongoCatThumbnail/>,
+    content: <BongoCatContent/>,
+  },
+};
+
+export default function PortfolioPage({ searchParams }: { searchParams: { project?: string } }) {
+  const { project } = searchParams;
+  const router = useRouter();
+
+  const [selectedProject, setSelectedProject] = React.useState<string|null>(project as string);
+
+  function handleProjectClose() {
+    setSelectedProject(null);
+    router.replace('/portfolio');
+  }
+
+  function handleProjectOpen(project:string) {
+    setSelectedProject(project);
+    router.replace(`/portfolio?project=${project}`);
+  }
 
   return <>
     <div className="px-6 pt-20 pb-6 container max-w-4xl">
@@ -30,14 +84,14 @@ export default function PortfolioPage() {
         {/* ROW 1 */}
         <motion.div
           className="md:col-span-8 shadow-md"
-          onClick={() => setSelectedProject('polistat')}
+          onClick={() => handleProjectOpen('polistat')}
           whileHover={{ scale: 1.01 }}
         >
           <PolistatThumbnail/>
         </motion.div>
         <motion.div
           className="md:col-span-4 shadow-md"
-          onClick={() => setSelectedProject('stemtothesky')}
+          onClick={() => handleProjectOpen('stemtothesky')}
           whileHover={{ scale: 1.01 }}
         >
           <StemtotheSkyThumbnail/>
@@ -46,21 +100,21 @@ export default function PortfolioPage() {
         {/* ROW 2 */}
         <motion.div
           className="md:col-span-3 shadow-md"
-          onClick={() => setSelectedProject('bh6')}
+          onClick={() => handleProjectOpen('bh6')}
           whileHover={{ scale: 1.01 }}
         >
           <BH6Thumbnail/>
         </motion.div>
         <motion.div
           className="md:col-span-6 shadow-md"
-          onClick={() => setSelectedProject('scrapbook')}
+          onClick={() => handleProjectOpen('scrapbook')}
           whileHover={{ scale: 1.01 }}
         >
           <ScrapbookThumbnail/>
         </motion.div>
         <motion.div
           className="md:col-span-3 shadow-md"
-          onClick={() => setSelectedProject('bhmini')}
+          onClick={() => handleProjectOpen('bhmini')}
           whileHover={{ scale: 1.01 }}
         >
           <BHMiniThumbnail/>
@@ -69,21 +123,21 @@ export default function PortfolioPage() {
         {/* ROW 3 */}
         <motion.div
           className="md:col-span-6 shadow-md"
-          onClick={() => setSelectedProject('wordle')}
+          onClick={() => handleProjectOpen('wordle')}
           whileHover={{ scale: 1.01 }}
         >
           <WordleThumbnail/>
         </motion.div>
         <motion.div
           className="md:col-span-3 shadow-md"
-          onClick={() => setSelectedProject('jamcave')}
+          onClick={() => handleProjectOpen('jamcave')}
           whileHover={{ scale: 1.01 }}
         >
           <JamcaveThumbnail/>
         </motion.div>
         <motion.div
           className="md:col-span-3 shadow-md"
-          onClick={() => setSelectedProject('bongocat')}
+          onClick={() => handleProjectOpen('bongocat')}
           whileHover={{ scale: 1.01 }}
         >
           <BongoCatThumbnail/>
@@ -95,7 +149,7 @@ export default function PortfolioPage() {
       {selectedProject && <>
         <motion.div
           className="px-4 pb-12 pt-36 fixed inset-0 bg-black/20 overflow-y-auto z-40"
-          onClick={() => setSelectedProject(null)}
+          onClick={handleProjectClose}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -107,35 +161,15 @@ export default function PortfolioPage() {
           >
             <div className="bg-theme-background backdrop-blur-sm drop-shadow-md rounded-xl overflow-hidden">
               <div className="h-48">
-                {
-                  selectedProject === 'polistat' ? <PolistatThumbnail/>
-                  : selectedProject === 'stemtothesky' ? <StemtotheSkyThumbnail/>
-                  : selectedProject === 'bh6' ? <BH6Thumbnail/>
-                  : selectedProject === 'scrapbook' ? <ScrapbookThumbnail/>
-                  : selectedProject === 'bhmini' ? <BHMiniThumbnail/>
-                  : selectedProject === 'jamcave' ? <JamcaveThumbnail/>
-                  : selectedProject === 'wordle' ? <WordleThumbnail/>
-                  : selectedProject === 'bongocat' ? <BongoCatThumbnail/>
-                  : null
-                }
+                {projects[selectedProject].thumbnail}
               </div>
 
-              {
-                selectedProject === 'polistat' ? <PolistatContent/>
-                : selectedProject === 'stemtothesky' ? <StemtotheSkyContent/>
-                : selectedProject === 'bh6' ? <BH6Content/>
-                : selectedProject === 'scrapbook' ? <ScrapbookContent/>
-                : selectedProject === 'bhmini' ? <BHMiniContent/>
-                : selectedProject === 'jamcave' ? <JamcaveContent/>
-                : selectedProject === 'wordle' ? <WordleContent/>
-                : selectedProject === 'bongocat' ? <BongoCatContent/>
-                : null
-              }
+              {projects[selectedProject].content}
             </div>
 
             <button
               className="p-2 absolute -top-14 right-0 text-theme-onBackground/40 hover:text-theme-primaryVariant bg-theme-surface/50 hover:bg-theme-surface/75 rounded-full z-50 transition ease-in-out duration-300"
-              onClick={() => setSelectedProject(null)}
+              onClick={handleProjectClose}
             >
               <FiX size="1.5rem" className="stroke-[2.5px]"/>
             </button>
