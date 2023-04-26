@@ -56,7 +56,8 @@ const projects: {
   },
 };
 
-export default function PortfolioPage({ searchParams: { project } }: { searchParams?: { project?: string } }) {
+export default function PortfolioPage({ searchParams }: { searchParams?: { project?: string } }) {
+  const project = searchParams?.project;
   const router = useRouter();
 
   const [selectedProject, setSelectedProject] = React.useState<string|null>(project as string);
