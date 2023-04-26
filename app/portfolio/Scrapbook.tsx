@@ -1,14 +1,16 @@
 import ContentHead from './ContentHead';
 
+import BrowserFrame from 'components/BrowserFrame';
+
 export function Thumbnail() {
-  return <div className="h-full py-12 bg-stone-800 flex justify-center items-center relative overflow-hidden">
+  return <div className="h-full px-6 py-12 bg-stone-800 flex justify-center items-center relative overflow-hidden">
     <img
-      src="/assets/portfolio/bhcscrap-flag.svg"
+      src="/assets/portfolio/scrapbook-flag.svg"
       className="absolute h-16 top-0 left-6"
     />
     <img
-      src="/assets/portfolio/bhcscrap.png"
-      className="w-10/12"
+      src="/assets/portfolio/scrapbook.png"
+      className="my-6"
     />
   </div>;
 }
@@ -25,5 +27,7 @@ export function Content() {
     <p className="text-md font-light">
       A project-sharing platform I made for Blair Hack Club where members can share updates on their personal projects and activities on Discord and the posts are displayed in an online scrapbook.
     </p>
+
+    <BrowserFrame src="/assets/portfolio/scrapbook-mockup.png" className="mt-8"/>
   </ContentHead>;
 }

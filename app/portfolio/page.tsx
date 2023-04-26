@@ -6,50 +6,20 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { Thumbnail as PolistatThumbnail, Content as PolistatContent } from './Polistat';
 import { Thumbnail as StemtotheSkyThumbnail, Content as StemtotheSkyContent } from './StemtotheSky';
-import { Thumbnail as BhcThumbnail, Content as BhcContent } from './Bhc';
+import { Thumbnail as BH6Thumbnail, Content as BH6Content } from './BH6';
 import { Thumbnail as ScrapbookThumbnail, Content as ScrapbookContent } from './Scrapbook';
-import { Thumbnail as CodeletThumbnail, Content as CodeletContent } from './Codelet';
+import { Thumbnail as BHMiniThumbnail, Content as BHMiniContent } from './BHMini';
 import { Thumbnail as JamcaveThumbnail, Content as JamcaveContent } from './Jamcave';
 import { Thumbnail as WordleThumbnail, Content as WordleContent } from './Wordle';
 import { Thumbnail as BongoCatThumbnail, Content as BongoCatContent } from './BongoCat';
 
 import { FiX } from 'react-icons/fi';
 
-
-const projects: { [id:string]: any; } = {
-  wordle: {
-    title: "Wordle Archive",
-    description: "A clone of NYT's Wordle game, with playable records of all current and past Wordle challenges.",
-    links: [
-      { label: "website", href: "https://wordle.linkaiwu.com" },
-      { label: "github", href: "https://github.com/linkai101/wordle" },
-    ]
-  },
-}
-
-
 export default function PortfolioPage() {
   const [selectedProject, setSelectedProject] = React.useState<string|null>(null);
 
   return <>
     <div className="px-6 pt-20 pb-6 container max-w-4xl">
-      {/* <div className="flex">
-        <Link href="/">
-          <div className="flex items-center gap-3">
-            <div className="h-8 w-8 flex justify-center items-center bg-gradient-to-br from-theme-primary to-theme-background rounded-full overflow-hidden">
-              <img
-                // src="/assets/linkai-transparent.png"
-                src="/assets/memoji.png"
-              />
-            </div>
-
-            <span className="text-xl font-semibold font-display">
-              Linkai Wu
-            </span>
-          </div>
-        </Link>
-      </div> */}
-
       <h1 className="text-4xl font-bold font-display">
         Portfolio
       </h1>
@@ -57,6 +27,7 @@ export default function PortfolioPage() {
     
     <div className="px-6 pt-8 pb-16 container max-w-4xl">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+        {/* ROW 1 */}
         <motion.div
           className="md:col-span-8 shadow-md"
           onClick={() => setSelectedProject('polistat')}
@@ -71,12 +42,14 @@ export default function PortfolioPage() {
         >
           <StemtotheSkyThumbnail/>
         </motion.div>
+
+        {/* ROW 2 */}
         <motion.div
           className="md:col-span-3 shadow-md"
-          onClick={() => setSelectedProject('bhc')}
+          onClick={() => setSelectedProject('bh6')}
           whileHover={{ scale: 1.01 }}
         >
-          <BhcThumbnail/>
+          <BH6Thumbnail/>
         </motion.div>
         <motion.div
           className="md:col-span-6 shadow-md"
@@ -85,28 +58,15 @@ export default function PortfolioPage() {
         >
           <ScrapbookThumbnail/>
         </motion.div>
-        {/* <motion.div
-          className="md:col-span-3 shadow-md"
-          onClick={() => setSelectedProject('codelet')}
-          whileHover={{ scale: 1.01 }}
-        >
-          <CodeletThumbnail/>
-        </motion.div> */}
         <motion.div
           className="md:col-span-3 shadow-md"
-          onClick={() => setSelectedProject('bongocat')}
+          onClick={() => setSelectedProject('bhmini')}
           whileHover={{ scale: 1.01 }}
         >
-          <BongoCatThumbnail/>
+          <BHMiniThumbnail/>
         </motion.div>
 
-        <motion.div
-          className="md:col-span-6 shadow-md"
-          onClick={() => setSelectedProject('jamcave')}
-          whileHover={{ scale: 1.01 }}
-        >
-          <JamcaveThumbnail/>
-        </motion.div>
+        {/* ROW 3 */}
         <motion.div
           className="md:col-span-6 shadow-md"
           onClick={() => setSelectedProject('wordle')}
@@ -114,16 +74,20 @@ export default function PortfolioPage() {
         >
           <WordleThumbnail/>
         </motion.div>
-
-        {/* <motion.div
-          className="md:col-span-4 shadow-md"
+        <motion.div
+          className="md:col-span-3 shadow-md"
+          onClick={() => setSelectedProject('jamcave')}
+          whileHover={{ scale: 1.01 }}
+        >
+          <JamcaveThumbnail/>
+        </motion.div>
+        <motion.div
+          className="md:col-span-3 shadow-md"
           onClick={() => setSelectedProject('bongocat')}
           whileHover={{ scale: 1.01 }}
         >
           <BongoCatThumbnail/>
         </motion.div>
-        <div className="hidden md:block bg-theme-primaryVariant/25 md:col-span-4 shadow-inner"></div>
-        <div className="hidden md:block bg-theme-primaryVariant/25 md:col-span-4 shadow-inner"></div> */}
       </div>
     </div>
 
@@ -141,14 +105,14 @@ export default function PortfolioPage() {
             className="container max-w-3xl relative z-40"
             onClick={e => e.stopPropagation()}
           >
-            <div className="bg-theme-surface/[0.97] backdrop-blur-sm drop-shadow-md rounded-xl overflow-hidden">
+            <div className="bg-theme-background backdrop-blur-sm drop-shadow-md rounded-xl overflow-hidden">
               <div className="h-48">
                 {
                   selectedProject === 'polistat' ? <PolistatThumbnail/>
                   : selectedProject === 'stemtothesky' ? <StemtotheSkyThumbnail/>
-                  : selectedProject === 'bhc' ? <BhcThumbnail/>
+                  : selectedProject === 'bh6' ? <BH6Thumbnail/>
                   : selectedProject === 'scrapbook' ? <ScrapbookThumbnail/>
-                  : selectedProject === 'codelet' ? <CodeletThumbnail/>
+                  : selectedProject === 'bhmini' ? <BHMiniThumbnail/>
                   : selectedProject === 'jamcave' ? <JamcaveThumbnail/>
                   : selectedProject === 'wordle' ? <WordleThumbnail/>
                   : selectedProject === 'bongocat' ? <BongoCatThumbnail/>
@@ -159,9 +123,9 @@ export default function PortfolioPage() {
               {
                 selectedProject === 'polistat' ? <PolistatContent/>
                 : selectedProject === 'stemtothesky' ? <StemtotheSkyContent/>
-                : selectedProject === 'bhc' ? <BhcContent/>
+                : selectedProject === 'bh6' ? <BH6Content/>
                 : selectedProject === 'scrapbook' ? <ScrapbookContent/>
-                : selectedProject === 'codelet' ? <CodeletContent/>
+                : selectedProject === 'bhmini' ? <BHMiniContent/>
                 : selectedProject === 'jamcave' ? <JamcaveContent/>
                 : selectedProject === 'wordle' ? <WordleContent/>
                 : selectedProject === 'bongocat' ? <BongoCatContent/>
@@ -170,7 +134,7 @@ export default function PortfolioPage() {
             </div>
 
             <button
-              className="p-2 absolute -top-14 right-0 text-theme-onBackground/40 hover:text-theme-primary bg-theme-surface/50 hover:bg-theme-surface/75 rounded-full z-50 transition ease-in-out duration-300"
+              className="p-2 absolute -top-14 right-0 text-theme-onBackground/40 hover:text-theme-primaryVariant bg-theme-surface/50 hover:bg-theme-surface/75 rounded-full z-50 transition ease-in-out duration-300"
               onClick={() => setSelectedProject(null)}
             >
               <FiX size="1.5rem" className="stroke-[2.5px]"/>

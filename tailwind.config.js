@@ -18,19 +18,21 @@ module.exports = {
       },
       colors: {
         theme: {
-          primary: "#81A4CD",
-          primaryVariant: "#DBE4EE",
-          // secondary: "#DEB841",
-          // secondaryVariant: "#EFCB68",
-          background: "#F5FEFD",
-          surface: "#F5FEFD", //#FBFCF8
+          primary: "#373e98", //81a4cd
+          primaryVariant: "#7377b6", //dbe4ee
+          secondary: "#fee36e",
+          secondaryVariant: "#ceb92c",
+          background: "#f2f6ff",
+          surface: "#e7e8ec",
           // error: "",
-          onPrimary: "#F5FEFD",
-          onSecondary: "#F5FEFD",
-          onBackground: "#292F36",
-          onSurface: "#292F36",
+          onPrimary: "#f2f6ff",
+          // onSecondary: "#",
+          onBackground: "#2a2a2a",
+          onSurface: "#2a2a2a",
           // onError: ""
         }
+      },
+      cursor: {
       }
     },
   },

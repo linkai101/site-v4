@@ -16,7 +16,7 @@ export default function ContentHead({ title, links, children }: ContentHeadProps
       <div className="flex gap-2.5">
         {links?.map((link: { label: string; href: string; }) => 
           <Link href={link.href} target="_blank" rel="noopener noreferrer">
-            <div className="px-2 py-1 text-xs text-theme-primary font-semibold hover:underline border-2 decoration-[1.5px] decoration-theme-primary border-theme-primary rounded-full" key={link.label}>
+            <div className="px-2 py-1 text-xs text-theme-primaryVariant font-semibold hover:underline border-2 decoration-[1.5px] decoration-theme-primaryVariant border-theme-primaryVariant rounded-full" key={link.label}>
               <span>{link.label}</span>
             </div>
           </Link>

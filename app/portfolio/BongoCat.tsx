@@ -1,7 +1,9 @@
 import ContentHead from './ContentHead';
 
+import BrowserFrame from 'components/BrowserFrame';
+
 export function Thumbnail() {
-  return <div className="h-full py-12 bg-stone-800 flex items-center justify-center relative overflow-hidden">
+  return <div className="h-full px-4 py-12 bg-stone-800 flex items-center justify-center relative overflow-hidden">
     <img
       src="/assets/portfolio/bongocat-overlay.png"
       className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-2 h-16 opacity-25"
@@ -24,5 +26,7 @@ export function Content() {
     <p className="text-md font-light">
       A bongo cat instrument emulator with a playable virtual piano, bongos, and drumset. This was inspired by the popular bongo cat meme.
     </p>
+
+    <BrowserFrame src="/assets/portfolio/bongocat-mockup.png" className="mt-8"/>
   </ContentHead>;
 }

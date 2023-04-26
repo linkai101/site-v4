@@ -7,51 +7,48 @@ import { motion } from 'framer-motion';
 import { FaAngleDown, FaRegStar } from 'react-icons/fa';
 import { FiMail, FiGithub, FiLinkedin, FiYoutube } from 'react-icons/fi';
 
+import Ragdoll from 'components/Ragdoll/Ragdoll';
+
 export default function HomePage() {
   return <>
     <div>
       <div
         className="
           min-h-screen px-4 pt-8 pb-24
-          flex flex-col items-center justify-center gap-12
+          flex flex-col items-center justify-center
           sticky top-0
-          bg-[url('/assets/background.jpg')] bg-cover bg-center
+          bg-theme-primary text-theme-onPrimary
+          overflow-hidden
         "
       >
-        <div className="h-64 w-64 flex justify-center items-center bg-gradient-to-br from-theme-primary/95 to-theme-background/95 rounded-full overflow-hidden">
-          <img
-            src="/assets/linkai-transparent.png"
-            className="sepia-[.5]"
-          />
+        <p className="absolute top-0 text-[19.5vw] whitespace-nowrap font-black uppercase opacity-10 select-none -z-20">
+          Linkai Wu
+        </p>
+
+        <div className="absolute top-36 bottom-0 inset-x-0 w-full">
+          <Ragdoll/>
         </div>
 
-        <div className="flex flex-col items-center">
-          <h1 className="text-4xl md:text-5xl text-white font-black font-display drop-shadow-xl">
-            Linkai Wu
-          </h1>
-
-          {/* <input
-            className="w-64 px-3 pt-[0.425rem] pb-[0.325rem] text-sm bg-theme-primaryVariant/50 rounded-full mt-2"
-            // placeholder="Start typing..."
-          /> */}
-        </div>
-
-        <div className="absolute bottom-8 px-1 pt-[0.325rem] pb-[0.175rem] text-xl text-theme-primary bg-black/5 rounded-full">
-          <FaAngleDown/>
+        <div className="absolute bottom-24 px-1 pt-[0.325rem] pb-[0.175rem] flex items-center gap-0.5 text-theme-onPrimary/25 bg-theme-primaryVariant/10 rounded-full ">
+          <FaAngleDown className="text-xl"/>
+          <span className="text-xs font-bold pr-1">
+            scroll!
+          </span>
         </div>
       </div>
 
-      <div className="h-48"/>
+      <div className="h-20"/>
+      {/* <div className="h-48"/> */}
     </div>
 
     <div className="px-4 relative -mt-40">
       <div
         className="
           container max-w-4xl
-          bg-theme-surface text-theme-onSurface rounded-t-xl shadow-2xl overflow-hidden
+          bg-theme-background text-theme-onBackground rounded-t-xl shadow-2xl overflow-hidden
         "
       >
-        <div className="flex gap-4 bg-black/5">
+        <div className="flex gap-4 bg-theme-surface">
           <div className="p-4 flex items-center gap-1.5">
             <div className="h-3 w-3 rounded-full bg-red-400"></div>
             <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
@@ -71,102 +68,45 @@ export default function HomePage() {
         </div>
 
         <div className="p-8 md:p-12">
-          <h2 className="text-2xl font-extrabold font-display">
-            Hey! I'm Linkai.
-          </h2>
-          <p className="font-light mt-2">
-            I'm a high school student based in Maryland at Montgomery Blair High School.
-            Welcome to my corner of the internet!
-          </p>
-
-          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-            <div className="p-4 bg-theme-primaryVariant/25 rounded-md">
-              <h3 className="text-xl font-bold font-display italic">
-                I code.
-              </h3>
-              <p className="text-sm font-light mt-0.5">
-                I mostly do web dev, but I also make bots, apps, games, and more!
-              </p>
-              <p className="text-xs font-medium italic mt-1.5">
-                Check out my portfolio to see some of my best projects!
-              </p>
-
-              <div className="flex gap-2 mt-2.5">
-                <Link href="/portfolio">
-                  <div className="px-2 py-1 text-xs text-theme-primary font-semibold hover:underline border-2 decoration-[1.5px] decoration-theme-primary border-theme-primary rounded-full">
-                    <span>my portfolio</span>
-                  </div>
-                </Link>
-
-                <Link href="https://github.com/linkai101" target="_blank" rel="noopener noreferrer">
-                  <div className="px-2 py-1 text-xs text-theme-primary font-semibold hover:underline border-2 decoration-[1.5px] decoration-theme-primary border-theme-primary rounded-full">
-                    <span>my github</span>
-                  </div>
-                </Link>
-              </div>
-            </div>
-
-            <div className="p-4 bg-theme-primaryVariant/25 rounded-md">
-              <h3 className="text-xl font-bold font-display italic">
-                I make.
-              </h3>
-              <p className="text-sm font-light mt-0.5">
+          <div className="flex gap-4 sm:gap-8">
+            <div>
+              <h2 className="text-2xl font-extrabold font-display">
+                Hey! I'm Linkai. <span className="text-theme-onBackground/30 text-base">(he/him)</span>
+              </h2>
+              <p className="font-light mt-2">
+                I'm a student current based in Maryland. (Montgomery Blair HS &apos;23)
+                Welcome to my corner of the internet!
               </p>
             </div>
-
-            <div className="p-4 bg-theme-primaryVariant/25 rounded-md">
-              <h3 className="text-xl font-bold font-display italic">
-                I learn.
-                </h3>
-            </div>
-          </div> */}
+            <img
+              src="/assets/linkai.jpg"
+              className="h-24 aspect-square sepia-[0.5] rounded-full object-cover"
+            />
+          </div>
 
           <h3 className="text-lg font-bold font-display mt-12">
             Check out...
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
-            <Link href="https://6.blairhacks.com" target="_blank" rel="noopener noreferrer">
-              <motion.div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md" whileHover={{ scale: 1.01 }}>
+            <Link href="/portfolio">
+              <motion.div className="p-3 flex gap-3 bg-theme-surface/75 rounded-md" whileHover={{ scale: 1.01 }}>
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold">
-                    BlairHacks_6
+                    Portfolio
                   </h4>
                   <p className="text-xs leading-4 mt-0.5">
-                    A free, 2-day hackathon for DMV high schoolers. March 25-25, 2023.
+                    A showcase of my best projects. Check out what I've been up to!
                   </p>
                 </div>
 
                 <div>
-                  <img
-                    src="/assets/blairhacks.png"
-                    className="h-10 aspect-square rounded-md"
-                  />
+                  <span className="text-4xl">💼</span>
                 </div>
               </motion.div>
             </Link>
 
-            {/* <Link href="https://blair.hackclub.com" target="_blank" rel="noopener noreferrer">
-              <motion.div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md" whileHover={{ scale: 1.01 }}>
-                <div className="flex-1">
-                  <h4 className="text-sm font-semibold">
-                    Blair Hack Club
-                  </h4>
-                  <p className="text-xs leading-4 mt-0.5">
-                    Creative coding club at MBHS. Wednesdays during lunch @ 314.
-                  </p>
-                </div>
-
-                <div>
-                  <img
-                    src="/assets/bhc.png"
-                    className="h-10 aspect-square rounded-md"
-                  />
-                </div>
-              </motion.div>
-            </Link> */}
-
             <Link href="https://polistat.mbhs.edu" target="_blank" rel="noopener noreferrer">
-              <motion.div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md" whileHover={{ scale: 1.01 }}>
+              <motion.div className="p-3 flex gap-3 bg-theme-surface/75 rounded-md" whileHover={{ scale: 1.01 }}>
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold">
                     ORACLE of Blair 2022
@@ -186,14 +126,12 @@ export default function HomePage() {
             </Link>
             
             <Link href="https://stemtothesky.org" target="_blank" rel="noopener noreferrer">
-              <motion.div className="p-3 flex gap-3 bg-theme-primaryVariant/25 rounded-md" whileHover={{ scale: 1.01 }}>
+              <motion.div className="p-3 flex gap-3 bg-theme-surface/75 rounded-md" whileHover={{ scale: 1.01 }}>
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold">
-                    {/* ORACLE of Blair 2022 */}
                     STEM to the Sky
                   </h4>
                   <p className="text-xs leading-4 mt-0.5">
-                    {/* A project to predict the 2022 midterm elections. Created by '23 seniors at MBHS. */}
                     Showcasing diverse pathways and careers in STEM through interviews and events. I designed their website!
                   </p>
                 </div>
@@ -213,10 +151,10 @@ export default function HomePage() {
           </h3>
           <div className="flex gap-3 overflow-x-auto overflow-y-hidden mt-2">
             <Link href="mailto:linkai@linkaiwu.com">
-              <div className="px-2 h-12 flex items-end justify-center gap-2.5 rounded-lg bg-theme-primaryVariant/25 hover:bg-theme-primaryVariant/40">
-                <FiMail size="2.15rem" className="text-theme-primary stroke-[2.2px]"/>
+              <div className="px-2 h-12 flex items-end justify-center gap-2.5 rounded-lg bg-theme-surface/75 hover:bg-theme-surface">
+                <FiMail size="2.15rem" className="text-theme-primaryVariant stroke-[2.2px]"/>
                 <div className="py-0.5">
-                  <p className="text-xs text-theme-primary font-extrabold">
+                  <p className="text-xs text-theme-primaryVariant font-extrabold">
                     Contact me
                   </p>
                   <p className="text-xs text-theme-onSurface/75 font-bold -mt-0.5">
@@ -227,26 +165,26 @@ export default function HomePage() {
             </Link>
 
             <Link href="https://github.com/linkai101" target="_blank" rel="noopener noreferrer">
-              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25 hover:bg-theme-primaryVariant/40">
-                <FiGithub size="2.25rem" className="text-theme-primary stroke-[2.2px]"/>
+              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-surface/75 hover:bg-theme-surface">
+                <FiGithub size="2.25rem" className="text-theme-primaryVariant stroke-[2.2px]"/>
               </div>
             </Link>
 
             <Link href="https://linkedin.com/in/linkaiwu" target="_blank" rel="noopener noreferrer">
-              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25 hover:bg-theme-primaryVariant/40">
-                <FiLinkedin size="2rem" className="text-theme-primary stroke-[2.2px] mb-[0.1rem]"/>
+              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-surface/75 hover:bg-theme-surface">
+                <FiLinkedin size="2rem" className="text-theme-primaryVariant stroke-[2.2px] mb-[0.1rem]"/>
               </div>
             </Link>
             
             <Link href="https://youtube.com/@linkai" target="_blank" rel="noopener noreferrer">
-              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-primaryVariant/25 hover:bg-theme-primaryVariant/40">
-                <FiYoutube size="2.15rem" className="text-theme-primary stroke-[2.2px] -mb-[0.1rem]"/>
+              <div className="h-12 w-12 flex items-end justify-center rounded-lg bg-theme-surface/75 hover:bg-theme-surface">
+                <FiYoutube size="2.15rem" className="text-theme-primaryVariant stroke-[2.2px] -mb-[0.1rem]"/>
               </div>
             </Link>
           </div>
 
           <p className="text-xs font-light italic mt-10">
-            Last updated: Feb 26, 2023
+            Last updated: Apr 26, 2023
           </p>
         </div>
       </div>

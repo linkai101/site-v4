@@ -1,10 +1,10 @@
 import ContentHead from './ContentHead';
 
 export function Thumbnail() {
-  return <div className="h-full py-12 bg-cyan-600/75 flex justify-center items-center overflow-hidden">
+  return <div className="h-full px-4 py-12 bg-cyan-600/75 flex justify-center items-center overflow-hidden">
     <img
       src="/assets/portfolio/jamcave.svg"
-      className="h-10"
+      className="h-10 my-4"
     />
   </div>;
 }
