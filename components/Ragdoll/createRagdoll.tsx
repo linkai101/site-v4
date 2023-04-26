@@ -1,4 +1,5 @@
 // Converted from the createRagdoll method in CANNON js ragdoll demo
+// @ts-ignore
 export function createRagdoll(scale, angleA = 0, angleB = 0, twistAngle = 0) {
   const shouldersDistance = 0.45 * scale,
     upperArmLength = 0.4 * scale,
