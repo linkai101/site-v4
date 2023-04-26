@@ -6,12 +6,17 @@ import { useDragConstraint } from './Drag'
 import { Block } from './Block'
 
 const { shapes, joints } = createRagdoll(5.5, Math.PI / 16, Math.PI / 16, 0)
+  // @ts-ignore
 const context = createContext()
 
+  // @ts-ignore
 const BodyPart = ({ config, children, render, name, ...props }) => {
+  // @ts-ignore
   const { color, args, mass, position } = shapes[name]
+  // @ts-ignore
   const parent = useContext(context)
   const [ref] = useBox(() => ({ mass, args, position, linearDamping: 0.99, ...props }))
+  // @ts-ignore
   useConeTwistConstraint(ref, parent, config)
   const bind = useDragConstraint(ref)
   return (
@@ -28,11 +33,14 @@ function Face() {
   const mouth = useRef()
   const eyes = useRef()
   useFrame((state) => {
+  // @ts-ignore
     eyes.current.position.y = Math.sin(state.clock.elapsedTime * 2) * 0.1
+  // @ts-ignore
     mouth.current.scale.y = (1 + Math.sin(state.clock.elapsedTime * 2)) * 0.6
   })
   return (
     <>
+      {/* @ts-ignore */}
       <group ref={eyes}>
         <Block position={[-0.3, 0.1, 0.5]} args={[0.2, 0.1, 0.1]} color="black" transparent opacity={0.8} />
         <Block position={[0.3, 0.1, 0.5]} args={[0.2, 0.1, 0.1]} color="black" transparent opacity={0.8} />
@@ -42,6 +50,7 @@ function Face() {
   )
 }
 
+  // @ts-ignore
 export function Guy(props) {
   return (
     <BodyPart name="upperBody" {...props}>
