@@ -56,8 +56,7 @@ const projects: {
   },
 };
 
-// @ts-ignore
-export default function PortfolioPage({ searchParams: { project } }: { searchParams: { project?: string } }) {
+export default function PortfolioPage({ searchParams: { project } }: { searchParams?: { project?: string } }) {
   const router = useRouter();
 
   const [selectedProject, setSelectedProject] = React.useState<string|null>(project as string);
