@@ -5,8 +5,8 @@ import { useCompoundBody, useSphere, useCylinder, useDistanceConstraint, usePoin
 import { useDragConstraint } from './Drag'
 import { Block } from './Block'
 
-export function Chair(props) {
-  const [ref] = useCompoundBody(() => ({
+export function Chair(props:any) {
+  const [ref] = useCompoundBody<any>(() => ({
     mass: 24,
     linearDamping: 0.95,
     angularDamping: 0.95,
@@ -33,9 +33,10 @@ export function Chair(props) {
   )
 }
 
-export function Mug(props) {
+export function Mug(props: any) {
+  // @ts-ignore
   const { nodes, materials } = useGLTF('/assets/models/cup.glb')
-  const [cup] = useCylinder(() => ({ mass: 1, args: [0.62, 0.62, 1.2, 16], linearDamping: 0.95, angularDamping: 0.95, ...props }))
+  const [cup] = useCylinder<any>(() => ({ mass: 1, args: [0.62, 0.62, 1.2, 16], linearDamping: 0.95, angularDamping: 0.95, ...props }))
   const bind = useDragConstraint(cup)
   return (
     <group ref={cup} {...bind} dispose={null}>
@@ -47,8 +48,8 @@ export function Mug(props) {
   )
 }
 
-export function Table(props) {
-  const [table] = useCompoundBody(() => ({
+export function Table(props: any) {
+  const [table] = useCompoundBody<any>(() => ({
     mass: 54,
     linearDamping: 0.95,
     angularDamping: 0.95,
@@ -73,11 +74,12 @@ export function Table(props) {
   )
 }
 
-export function Lamp(props) {
+export function Lamp(props: any) {
   const [target] = useState(() => new THREE.Object3D())
   const [fixed] = useSphere(() => ({ collisionFilterGroup: 0, type: 'Static', args: [0.2], ...props }))
-  const [lamp] = useCylinder(() => ({ mass: 1, args: [0.5, 1.5, 2, 16], angularDamping: 0.95, linearDamping: 0.95, material: { friction: 0.9 }, ...props }))
+  const [lamp] = useCylinder<any>(() => ({ mass: 1, args: [0.5, 1.5, 2, 16], angularDamping: 0.95, linearDamping: 0.95, material: { friction: 0.9 }, ...props }))
   const bind = useDragConstraint(lamp)
+  // @ts-ignore
   useDistanceConstraint(fixed, lamp, { distance: 2, pivotA: [0, 0, 0], pivotB: [0, 2, 0] })
   usePointToPointConstraint(fixed, lamp, { pivotA: [0, 0, 0], pivotB: [0, 2, 0] })
   return (
