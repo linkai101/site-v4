@@ -69,7 +69,8 @@ export default function PortfolioPage({ searchParams }: { searchParams?: { proje
 
   function handleProjectOpen(project:string) {
     setSelectedProject(project);
-    router.replace(`/portfolio?project=${project}`);
+    // @ts-expect-error
+    router.replace(`/portfolio?project=${project}`, { shallow: true });
   }
 
   return <>
