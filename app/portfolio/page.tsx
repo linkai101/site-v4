@@ -64,13 +64,13 @@ export default function PortfolioPage({ searchParams }: { searchParams?: { proje
 
   function handleProjectClose() {
     setSelectedProject(null);
-    router.replace('/portfolio');
+    // router.replace('/portfolio');
+    // TODO: (bug) automatically closes when you click on the project, only happens on build
   }
 
   function handleProjectOpen(project:string) {
     setSelectedProject(project);
-    // @ts-expect-error
-    router.replace(`/portfolio?project=${project}`, { shallow: true });
+    // router.replace(`/portfolio?project=${project}`);
   }
 
   return <>
