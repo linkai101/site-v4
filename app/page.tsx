@@ -29,7 +29,7 @@ export default function HomePage() {
           <Ragdoll/>
         </div>
 
-        <div className="absolute bottom-24 px-1 pt-[0.325rem] pb-[0.175rem] flex items-center gap-0.5 text-theme-onPrimary/25 bg-theme-primaryVariant/10 rounded-full ">
+        <div className="absolute bottom-24 px-1 pt-[0.325rem] pb-[0.175rem] flex items-center gap-0.5 text-theme-onPrimary/25 bg-theme-primaryVariant/10 rounded-full select-none">
           <FaAngleDown className="text-xl"/>
           <span className="text-xs font-bold pr-1">
             scroll!

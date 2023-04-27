@@ -4,8 +4,8 @@ export default async function Head() {
     <>
       <title>Portfolio – Linkai Wu</title>
       <meta property="og:title" content="Portfolio – Linkai Wu" key="ogtitle"/>
-      <meta name="description" content="A collection of my best projects. I'm Linkai Wu, a high school student based in Maryland at Montgomery Blair High School." key="desc" />
-      <meta property="og:description" content="A collection of my best projects. I'm Linkai Wu, a high school student based in Maryland at Montgomery Blair High School." key="ogdesc" />
+      <meta name="description" content="A collection of my best projects. I'm Linkai Wu, a maker, designer, and student currently based in Maryland." key="desc" />
+      <meta property="og:description" content="A collection of my best projects. I'm Linkai Wu, a maker, designer, and student currently based in Maryland." key="ogdesc" />
     </>
   )
 }
