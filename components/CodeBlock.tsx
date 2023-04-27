@@ -8,11 +8,12 @@ export default function CodeBlock({ node, inline, className, children, ...props 
   return !inline && match ? (
     <SyntaxHighlighter
       {...props}
-      children={String(children).replace(/\n$/, '')}
       style={vscDarkPlus}
       language={match[1]}
       PreTag="div"
-    />
+    >
+      {String(children).replace(/\n$/, '')}
+    </SyntaxHighlighter>
   ) : (
     <code {...props} className={className}>
       {children}
