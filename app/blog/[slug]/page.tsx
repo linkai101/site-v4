@@ -12,7 +12,7 @@ export const revalidate = 60; // seconds
 export default async function BlogPostPage({ params: { slug } }: { params: { slug: string } }) {
   const post = await getSinglePost(slug);
   if (!post) notFound();
-  
+
   return <>
     <div className="px-6 pt-20 pb-6 container max-w-4xl">
       <div className="flex items-end gap-4">
@@ -46,6 +46,33 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
             >
               {tag.name}
             </span>
+          )}
+        </div>
+      }
+
+      {post.comments.length > 0 &&
+        <div className="pt-5 pb-3 flex flex-col gap-3 border-y border-theme-onBackground/10 mt-6">
+          {post.comments.map((comment:any) =>
+            <div className="flex gap-3" key={comment.id}>
+              <img
+                src={comment.created_by.avatar}
+                alt={`Avatar of ${comment.created_by.name}`}
+                className="w-6 h-6 bg-theme-surface rounded-full"
+              />
+              <div className="flex-1">
+                <div className="flex items-end gap-2">
+                  <p className="text-sm font-semibold leading-none">
+                    {comment.created_by.name}
+                  </p>
+                  <p className="text-xs text-theme-onBackground/50 leading-none">
+                    {new Date(comment.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+                  </p>
+                </div>
+                <p>
+                  {comment.text}
+                </p>
+              </div>
+            </div>
           )}
         </div>
       }

@@ -93,8 +93,25 @@ export const getSinglePost = async (slug:string) => {
   const mdblocks = await n2m.pageToMarkdown(page.id);
   const mdString = n2m.toMarkdownString(mdblocks);
 
+  const comments = await notion.comments.list({ block_id: page.id });
+
   return {
     metadata,
     markdown: mdString || '',
+    comments: await Promise.all(comments.results.map(async (comment) => {
+      const user = await notion.users.retrieve({ user_id: comment.created_by.id });
+      return {
+        id: comment.id,
+        discussion_id: comment.discussion_id,
+        // @ts-ignore
+        text: comment.rich_text[0].plain_text,
+        date: comment.last_edited_time,
+        created_by: {
+          id: user.id,
+          name: user.name,
+          avatar: user.avatar_url,
+        },
+      }
+    })),
   };
 }
