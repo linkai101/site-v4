@@ -34,7 +34,7 @@ export default async function BlogPage() {
             <div className="flex flex-wrap gap-2">
               {tags.map((tag: { id:string, name:string, color:string }) =>
                 <span
-                  className="px-2.5 pt-1.5 pb-1 text-xs text-theme-primaryVariant bg-theme-primaryVariant/10 rounded-full"
+                  className={`px-2.5 pt-1.5 pb-1 text-xs text-notion-${tag.color||'primaryVariant'} bg-notion-${tag.color||'primaryVariant'}/10 rounded-full`}
                   key={tag.id}
                 >
                   {tag.name}
@@ -78,7 +78,7 @@ export default async function BlogPage() {
                     <div className="flex gap-2">
                       {post.tags.map((tag: { id: string, name: string, color: string }) =>
                         <span
-                          className="px-2.5 pt-1.5 pb-1 text-xs text-theme-primaryVariant bg-theme-primaryVariant/10 rounded-full mt-1"
+                          className={`px-2.5 pt-1.5 pb-1 text-xs text-notion-${tag.color||'primaryVariant'} bg-notion-${tag.color||'primaryVariant'}/10 rounded-full mt-1`}
                           key={tag.id}
                         >
                           {tag.name}
