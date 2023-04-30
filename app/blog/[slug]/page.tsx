@@ -15,6 +15,7 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
 
   return <>
     <div className="px-6 pt-20 pb-6 container max-w-4xl">
+      {/* TITLE */}
       <div className="flex items-end gap-4">
         {post.metadata.icon?.type === 'emoji' ?
           <span className="text-5xl">{post.metadata.icon.emoji}</span>
@@ -31,12 +32,14 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
         </h1>
       </div>
       
+      {/* DATE */}
       {post.metadata.date &&
         <p className="text-base text-theme-onBackground/40 font-medium uppercase mt-2">
           Published {new Date(post.metadata.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
         </p>
       }
       
+      {/* TAGS */}
       {post.metadata.tags.length > 0 &&
         <div className="flex gap-2 mt-1">
           {post.metadata.tags.map((tag: { id: string, name: string, color: string }) =>
@@ -50,6 +53,7 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
         </div>
       }
 
+      {/* COMMENTS */}
       {post.comments.length > 0 &&
         <div className="pt-5 pb-3 flex flex-col gap-3 border-y border-theme-onBackground/10 mt-6">
           {post.comments.map((comment:any) =>
@@ -60,7 +64,7 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
                 className="w-6 h-6 bg-theme-surface rounded-full"
               />
               <div className="flex-1">
-                <div className="flex items-end gap-2">
+                <div className="flex items-end gap-1.5">
                   <p className="text-sm font-semibold leading-none">
                     {comment.created_by.name}
                   </p>
@@ -68,7 +72,7 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
                     {new Date(comment.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
                   </p>
                 </div>
-                <p>
+                <p className="text-sm mt-0.5">
                   {comment.text}
                 </p>
               </div>

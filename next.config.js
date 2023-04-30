@@ -4,7 +4,20 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     appDir: true
-  }
+  },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'max-age=3600',
+          },
+        ],
+      },
+    ];
+  },
 }
 
 module.exports = nextConfig

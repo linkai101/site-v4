@@ -94,7 +94,7 @@ export default async function BlogPage() {
                   </div>
 
                   {post.cover &&
-                    <div className="h-28 aspect-square bg-theme-surface/50 rounded-lg overflow-hidden">
+                    <div className="h-20 md:h-28 aspect-square bg-theme-surface/50 rounded-lg overflow-hidden">
                       <img
                         src={
                           post.cover.type==='file' ? post.cover.file.url

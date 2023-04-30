@@ -104,7 +104,7 @@ export const getSinglePost = async (slug:string) => {
         id: comment.id,
         discussion_id: comment.discussion_id,
         // @ts-ignore
-        text: comment.rich_text[0].plain_text,
+        text: comment.rich_text[0].plain_text, // TODO: handle mentions, when rich_text lenght > 1
         date: comment.last_edited_time,
         created_by: {
           id: user.id,
