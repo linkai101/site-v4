@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import probe from 'probe-image-size';
 
 import { getDatabase, getAllPublished } from 'lib/notion';
 
@@ -51,7 +53,7 @@ export default async function BlogPage() {
           </div>
 
           <div className="flex flex-col">
-            {posts.map((post) =>
+            {posts.map((post) => (
               <Link href={`/blog/${post.slug}`} key={post.id}>
                 <div className="px-6 py-4 flex items-center gap-6 border-b-2 border-theme-surface">
                   <div className="flex-1">
@@ -94,8 +96,8 @@ export default async function BlogPage() {
                   </div>
 
                   {post.cover &&
-                    <div className="h-20 md:h-28 aspect-square bg-theme-surface/50 rounded-lg overflow-hidden">
-                      <img
+                    <div className="h-20 md:h-28 relative aspect-square bg-theme-surface/50 rounded-lg overflow-hidden">
+                      {/* <img
                         src={
                           post.cover.type==='file' ? post.cover.file.url
                           : post.cover.type==='external' ? post.cover.external.url
@@ -103,12 +105,27 @@ export default async function BlogPage() {
                         }
                         alt={`Cover for ${post.title}`}
                         className="w-full h-full object-cover"
-                      />
+                      /> */}
+                      {post.cover.type==='file' ?
+                        <Image
+                          src={post.cover.file.url}
+                          alt={`Cover for ${post.title}`}
+                          fill
+                          className="object-cover object-center"
+                        />
+                      : post.cover.type==='external' ?
+                        <Image
+                          src={post.cover.external.url}
+                          alt={`Cover for ${post.title}`}
+                          fill
+                          className="object-cover object-center"
+                        />
+                      : null}
                     </div>
                   }
                 </div>
               </Link>
-            )}
+            ))}
           </div>
         </div>
       </div>

@@ -100,6 +100,7 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
         children={post.markdown}
         remarkPlugins={[[remarkGfm, { singleTilde: false }]]}
         rehypePlugins={[rehypeRaw]}
+        // @ts-ignore
         components={MarkdownComponents}
         // className="prose mt-10"
         className="mt-10"
