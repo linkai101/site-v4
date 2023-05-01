@@ -41,10 +41,10 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
       
       {/* TAGS */}
       {post.metadata.tags.length > 0 &&
-        <div className="flex gap-2 mt-1">
+        <div className="flex gap-2 mt-2">
           {post.metadata.tags.map((tag: { id: string, name: string, color: string }) =>
             <span
-              className={`px-3 pt-1.5 pb-1 text-sm text-notion-${tag.color||'primaryVariant'} bg-notion-${tag.color||'primaryVariant'}/10 rounded-full mt-1`}
+              className={`px-3 pt-1.5 pb-1 text-sm text-notion-${tag.color||'primaryVariant'} bg-notion-${tag.color||'primaryVariant'}/10 rounded-full`}
               key={tag.id}
             >
               {tag.name}
