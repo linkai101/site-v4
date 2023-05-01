@@ -89,6 +89,8 @@ export const getSinglePost = async (slug:string) => {
     date: page.properties.Date.date?.start/* || page.last_edited_time*/,
     // @ts-ignore
     slug: page.properties.Slug.rich_text[0]?.plain_text,
+    // @ts-ignore
+    isPublished: page.properties.Published.checkbox,
   };
   const mdblocks = await n2m.pageToMarkdown(page.id);
   const mdString = n2m.toMarkdownString(mdblocks);

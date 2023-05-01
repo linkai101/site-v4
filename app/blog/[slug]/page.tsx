@@ -54,8 +54,23 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
       }
 
       {/* COMMENTS */}
-      {post.comments.length > 0 &&
+      {(post.comments.length > 0 || !post.metadata.isPublished) &&
         <div className="pt-5 pb-3 flex flex-col gap-3 border-y border-theme-onBackground/10 mt-6">
+          {!post.metadata.isPublished &&
+            <div className="flex gap-3">
+              <span className="text-xl">
+                🔗
+              </span>
+              <div className="flex-1">
+                <p className="text-sm font-semibold leading-none">
+                  This is an unlisted post.
+                </p>
+                <p className="text-sm mt-0.5">
+                  Content may be incomplete or not meant to be published.
+                </p>
+              </div>
+            </div>
+          }
           {post.comments.map((comment:any) =>
             <div className="flex gap-3" key={comment.id}>
               <img
