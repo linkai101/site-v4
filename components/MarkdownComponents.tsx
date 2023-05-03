@@ -1,6 +1,6 @@
 import Link from 'next/link';
-// import Image from 'next/image';
-// import probe from 'probe-image-size';
+import Image from 'next/image';
+import probe from 'probe-image-size';
 
 import CodeBlock from 'components/CodeBlock';
 
@@ -40,25 +40,25 @@ export default {
   blockquote: ({ children }:any) => <blockquote className="mt-3 mb-3 pl-4 border-l-4 border-theme-onBackground/10">{children}</blockquote>,
   details: ({ children }:any) => <details className="pl-3 mt-3 mb-3">{children}</details>,
   summary: ({ children }:any) => <summary className="-ml-3 cursor-pointer">{children}</summary>,
-  img: ({ src, alt }:any) => (
-    <div className="container max-w-xl my-8">
-      <img src={src} alt={alt} className="w-full"/>
-      {alt && <p className="text-sm text-theme-onBackground/50 mt-1.5">{alt}</p>}
-    </div>
-  ),
-  // img: async ({ src, alt }:any) => {
-  //   const dimensions = await probe(src);
-  //   return (
-  //     <div className="container max-w-xl my-8">
-  //       <Image
-  //         width={dimensions.width}
-  //         height={dimensions.height}
-  //         src={src}
-  //         alt={alt}
-  //         className="w-full"
-  //       />
-  //       {alt && <p className="text-sm text-theme-onBackground/50 mt-1.5">{alt}</p>}
-  //     </div>
-  //   );
-  // },
+  // img: ({ src, alt }:any) => (
+  //   <div className="container max-w-xl my-8">
+  //     <img src={src} alt={alt} className="w-full"/>
+  //     {alt && <p className="text-sm text-theme-onBackground/50 mt-1.5">{alt}</p>}
+  //   </div>
+  // ),
+  img: async ({ src, alt }:any) => {
+    const dimensions = await probe(src);
+    return (
+      <div className="container max-w-xl my-8">
+        <Image
+          width={dimensions.width}
+          height={dimensions.height}
+          src={src}
+          alt={alt}
+          className="w-full"
+        />
+        {alt && <p className="text-sm text-theme-onBackground/50 mt-1.5">{alt}</p>}
+      </div>
+    );
+  },
 };

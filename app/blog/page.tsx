@@ -88,7 +88,7 @@ export default async function BlogPage() {
                     </div>
                     
                     {post.description &&
-                      <p className="text-sm font-light mt-2.5">
+                      <p className="text-sm mt-2.5">
                         {post.description}
                       </p>
                     }
@@ -96,7 +96,7 @@ export default async function BlogPage() {
 
                   {post.cover &&
                     <div className="h-20 md:h-28 relative aspect-square bg-theme-surface/50 rounded-lg overflow-hidden">
-                      <img
+                      {/* <img
                         src={
                           post.cover.type==='file' ? post.cover.file.url
                           : post.cover.type==='external' ? post.cover.external.url
@@ -104,8 +104,8 @@ export default async function BlogPage() {
                         }
                         alt={`Cover for ${post.title}`}
                         className="w-full h-full object-cover"
-                      />
-                      {/* {post.cover.type==='file' ?
+                      /> */}
+                      {post.cover.type==='file' ?
                         <Image
                           src={post.cover.file.url}
                           alt={`Cover for ${post.title}`}
@@ -119,7 +119,7 @@ export default async function BlogPage() {
                           fill
                           className="object-cover object-center"
                         />
-                      : null} */}
+                      : null}
                     </div>
                   }
                 </div>

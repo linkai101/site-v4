@@ -14,7 +14,7 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
   if (!post) notFound();
 
   return <>
-    <div className="px-6 pt-20 pb-6 container max-w-4xl">
+    <div className="px-6 pt-20 pb-16 container max-w-4xl">
       {/* TITLE */}
       <div className="flex items-end gap-4">
         {post.metadata.icon?.type === 'emoji' ?
