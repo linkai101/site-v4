@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { getDatabase, getAllPublished } from 'lib/notion';
 
-// export const revalidate = 60; // seconds
+export const revalidate = 60; // seconds
 
 export default async function BlogPage() {
   const { tags } = await getDatabase();
