@@ -7,7 +7,7 @@ import rehypeRaw from 'rehype-raw';
 import { getSinglePost } from "lib/notion";
 import MarkdownComponents from "components/MarkdownComponents";
 
-export const revalidate = 60; // seconds
+// export const revalidate = 60; // seconds
 
 export default async function BlogPostPage({ params: { slug } }: { params: { slug: string } }) {
   const post = await getSinglePost(slug);
