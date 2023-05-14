@@ -1,3 +1,5 @@
+'use client';
+
 import { Canvas } from '@react-three/fiber'
 import { MeshReflectorMaterial } from '@react-three/drei'
 import { Physics, usePlane } from '@react-three/cannon'

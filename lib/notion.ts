@@ -93,7 +93,7 @@ export const getSinglePost = async (slug:string) => {
     isPublished: page.properties.Published.checkbox,
   };
   const mdblocks = await n2m.pageToMarkdown(page.id);
-  const mdString = n2m.toMarkdownString(mdblocks);
+  const mdString = n2m.toMarkdownString(mdblocks).parent; // notion-to-md returns child pages as well: https://github.com/souvikinator/notion-to-md
 
   const comments = await notion.comments.list({ block_id: page.id });
 

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { getSinglePost } from "lib/notion";
 
-import DepthScene from 'components/DepthScene/DepthScene';
+// import DepthScene from 'components/DepthScene/DepthScene';
 
 export default async function ReflectionsPage() {
   const posts = [
@@ -27,7 +27,7 @@ export default async function ReflectionsPage() {
             </p>
           </div>
 
-          <DepthScene
+          {/* <DepthScene
             textures={[
               '/assets/reflections/bg.png',
               '/assets/reflections/ground.png',
@@ -36,7 +36,7 @@ export default async function ReflectionsPage() {
               '/assets/reflections/campfire.png',
             ]}
             fireflies={true}
-          />
+          /> */}
         </div>
       </div>
 

@@ -1,8 +1,4 @@
-
-'use client';
-
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 
 import { FaAngleDown, FaRegStar } from 'react-icons/fa';
 import { FiMail, FiGithub, FiLinkedin, FiYoutube } from 'react-icons/fi';
@@ -91,7 +87,7 @@ export default function HomePage() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
             <Link href="/portfolio">
-              <motion.div className="p-3 flex gap-3 bg-theme-surface/75 rounded-md" whileHover={{ scale: 1.01 }}>
+              <div className="p-3 flex gap-3 bg-theme-surface/75 rounded-md hover:scale-[1.01] transition duration-200 ease-out hover:ease-in">
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold">
                     Portfolio
@@ -104,11 +100,11 @@ export default function HomePage() {
                 <div>
                   <span className="text-4xl">💼</span>
                 </div>
-              </motion.div>
+              </div>
             </Link>
 
             <Link href="https://polistat.mbhs.edu" target="_blank" rel="noopener noreferrer">
-              <motion.div className="p-3 flex gap-3 bg-theme-surface/75 rounded-md" whileHover={{ scale: 1.01 }}>
+              <div className="p-3 flex gap-3 bg-theme-surface/75 rounded-md hover:scale-[1.01] transition duration-200 ease-out hover:ease-in">
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold">
                     ORACLE of Blair 2022
@@ -124,11 +120,11 @@ export default function HomePage() {
                     className="h-10 aspect-square rounded-md"
                   />
                 </div>
-              </motion.div>
+              </div>
             </Link>
             
             <Link href="https://stemtothesky.org" target="_blank" rel="noopener noreferrer">
-              <motion.div className="p-3 flex gap-3 bg-theme-surface/75 rounded-md" whileHover={{ scale: 1.01 }}>
+              <div className="p-3 flex gap-3 bg-theme-surface/75 rounded-md hover:scale-[1.01] transition duration-200 ease-out hover:ease-in">
                 <div className="flex-1">
                   <h4 className="text-sm font-semibold">
                     STEM to the Sky
@@ -144,7 +140,7 @@ export default function HomePage() {
                     className="h-10 aspect-square rounded-md"
                   />
                 </div>
-              </motion.div>
+              </div>
             </Link>
           </div>
 
