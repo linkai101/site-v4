@@ -25,7 +25,7 @@ export function Content() {
     ]}
   >
     <p className="text-md font-light">
-      A project-sharing platform I made for Blair Hack Club where members can share updates on their personal projects and activities on Discord and the posts are displayed in an online scrapbook.
+      A project-sharing platform I made for Blair Hack Club where members can share updates on their personal portfolio and activities on Discord and the posts are displayed in an online scrapbook. (August 2022)
     </p>
 
     <BrowserFrame src="/assets/portfolio/scrapbook-mockup.png" className="mt-8"/>

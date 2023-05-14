@@ -29,10 +29,10 @@ export default function Navbar() {
               }}
               transition={{ duration: 0.5 }}
             >
-              <div className="h-8 w-8 flex justify-center items-center shrink-0 bg-black/5 rounded-full overflow-hidden">
+              <div className={`h-8 w-8 flex justify-center items-center shrink-0 ${onPrimary ? 'bg-white/5' : 'bg-black/5'} rounded-full overflow-hidden`}>
                 <img
                   src="/assets/linkai-transparent.png"
-                  className="sepia-[.5] scale-150 -mt-0.5"
+                  className="scale-110 mt-3.5"
                 />
               </div>
             </motion.div>

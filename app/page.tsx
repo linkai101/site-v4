@@ -28,6 +28,9 @@ export default function HomePage() {
         <div className="absolute top-36 bottom-0 inset-x-0 w-full">
           <Ragdoll/>
         </div>
+        {/* <div className="absolute inset-0 w-full flex justify-center">
+          <img src="/assets/linkai-transparent.png" className="absolute h-2/3 bottom-0"/>
+        </div> */}
 
         <div className="absolute bottom-24 px-1 pt-[0.325rem] pb-[0.175rem] flex items-center gap-0.5 text-theme-onPrimary/25 bg-theme-primaryVariant/10 rounded-full select-none">
           <FaAngleDown className="text-xl"/>
@@ -38,7 +41,6 @@ export default function HomePage() {
       </div>
 
       <div className="h-20"/>
-      {/* <div className="h-48"/> */}
     </div>
 
     <div className="px-4 relative -mt-40">
@@ -79,8 +81,8 @@ export default function HomePage() {
               </p>
             </div>
             <img
-              src="/assets/linkai.jpg"
-              className="h-24 aspect-square sepia-[0.5] rounded-full object-cover"
+              src="/assets/linkai.png"
+              className="h-24 aspect-square rounded-full object-cover"
             />
           </div>
 

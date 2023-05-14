@@ -18,7 +18,7 @@ export function Content() {
     ]}
   >
     <p className="text-md font-light">
-      A collaborative whiteboard app that lets you create and share notes with others in real time.
+      A collaborative whiteboard app that lets you create and share drawings with others in real time. (October 2021)
     </p>
   </ContentHead>;
 }

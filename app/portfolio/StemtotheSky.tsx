@@ -23,7 +23,7 @@ export function Content() {
     ]}
   >
     <p className="text-md font-light">
-      A student-led nonprofit dedicated to showcasing careers, fields, and opportunities in STEM through interviews and events with professionals. I designed and developed the website!
+      A student-led nonprofit dedicated to showcasing careers, fields, and opportunities in STEM through interviews and events with professionals. I designed and developed the website! (Fall 2022)
     </p>
 
     <BrowserFrame src="/assets/portfolio/stts-mockup.png" className="mt-8"/>

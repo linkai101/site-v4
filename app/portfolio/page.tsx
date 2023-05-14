@@ -10,13 +10,16 @@ import { Thumbnail as StemtotheSkyThumbnail, Content as StemtotheSkyContent } fr
 import { Thumbnail as BH6Thumbnail, Content as BH6Content } from './BH6';
 import { Thumbnail as ScrapbookThumbnail, Content as ScrapbookContent } from './Scrapbook';
 import { Thumbnail as BHMiniThumbnail, Content as BHMiniContent } from './BHMini';
-import { Thumbnail as JamcaveThumbnail, Content as JamcaveContent } from './Jamcave';
 import { Thumbnail as WordleThumbnail, Content as WordleContent } from './Wordle';
 import { Thumbnail as BongoCatThumbnail, Content as BongoCatContent } from './BongoCat';
+import { Thumbnail as JamcaveThumbnail, Content as JamcaveContent } from './Jamcave';
+import { Thumbnail as RythmCloneThumbnail, Content as RythmCloneContent } from './RythmClone';
+import { Thumbnail as AmongUs3DThumbnail, Content as AmongUs3DContent } from './AmongUs3D';
+import { Thumbnail as ClassManagerThumbnail, Content as ClassManagerContent } from './ClassManager';
 
 import { FiX } from 'react-icons/fi';
 
-const projects: {
+const portfolio: {
   [key: string]: {
     thumbnail: React.ReactNode,
     content: React.ReactNode,
@@ -42,10 +45,6 @@ const projects: {
     thumbnail: <BHMiniThumbnail/>,
     content: <BHMiniContent/>,
   },
-  jamcave: {
-    thumbnail: <JamcaveThumbnail/>,
-    content: <JamcaveContent/>,
-  },
   wordle: {
     thumbnail: <WordleThumbnail/>,
     content: <WordleContent/>,
@@ -53,6 +52,22 @@ const projects: {
   bongocat: {
     thumbnail: <BongoCatThumbnail/>,
     content: <BongoCatContent/>,
+  },
+  jamcave: {
+    thumbnail: <JamcaveThumbnail/>,
+    content: <JamcaveContent/>,
+  },
+  rythmclone: {
+    thumbnail: <RythmCloneThumbnail/>,
+    content: <RythmCloneContent/>,
+  },
+  amongus3d: {
+    thumbnail: <AmongUs3DThumbnail/>,
+    content: <AmongUs3DContent/>,
+  },
+  classmanager: {
+    thumbnail: <ClassManagerThumbnail/>,
+    content: <ClassManagerContent/>,
   },
 };
 
@@ -130,6 +145,15 @@ export default function PortfolioPage({ searchParams }: { searchParams?: { proje
           <WordleThumbnail/>
         </motion.div>
         <motion.div
+          className="md:col-span-6 shadow-md"
+          onClick={() => handleProjectOpen('bongocat')}
+          whileHover={{ scale: 1.01 }}
+        >
+          <BongoCatThumbnail/>
+        </motion.div>
+
+        {/* ROW 4 */}
+        <motion.div
           className="md:col-span-3 shadow-md"
           onClick={() => handleProjectOpen('jamcave')}
           whileHover={{ scale: 1.01 }}
@@ -138,10 +162,24 @@ export default function PortfolioPage({ searchParams }: { searchParams?: { proje
         </motion.div>
         <motion.div
           className="md:col-span-3 shadow-md"
-          onClick={() => handleProjectOpen('bongocat')}
+          onClick={() => handleProjectOpen('rythmclone')}
           whileHover={{ scale: 1.01 }}
         >
-          <BongoCatThumbnail/>
+          <RythmCloneThumbnail/>
+        </motion.div>
+        <motion.div
+          className="md:col-span-3 shadow-md"
+          onClick={() => handleProjectOpen('amongus3d')}
+          whileHover={{ scale: 1.01 }}
+        >
+          <AmongUs3DThumbnail/>
+        </motion.div>
+        <motion.div
+          className="md:col-span-3 shadow-md"
+          onClick={() => handleProjectOpen('classmanager')}
+          whileHover={{ scale: 1.01 }}
+        >
+          <ClassManagerThumbnail/>
         </motion.div>
       </div>
     </div>
@@ -162,10 +200,10 @@ export default function PortfolioPage({ searchParams }: { searchParams?: { proje
           >
             <div className="bg-theme-background backdrop-blur-sm drop-shadow-md rounded-xl overflow-hidden">
               <div className="h-48">
-                {projects[selectedProject].thumbnail}
+                {portfolio[selectedProject].thumbnail}
               </div>
 
-              {projects[selectedProject].content}
+              {portfolio[selectedProject].content}
             </div>
 
             <button

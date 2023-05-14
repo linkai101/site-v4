@@ -24,7 +24,7 @@ export function Content() {
     ]}
   >
     <p className="text-md font-light">
-      A bongo cat instrument emulator with a playable virtual piano, bongos, and drumset. This was inspired by the popular bongo cat meme.
+      A bongo cat instrument emulator with a playable virtual piano, bongos, and drumset. This was inspired by the popular bongo cat meme. (April 2022)
     </p>
 
     <BrowserFrame src="/assets/portfolio/bongocat-mockup.png" className="mt-8"/>

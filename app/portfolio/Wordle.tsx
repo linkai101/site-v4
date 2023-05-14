@@ -24,7 +24,7 @@ export function Content() {
     ]}
   >
     <p className="text-md font-light">
-      A clone of NYT's Wordle game, with playable records of all current and past Wordle challenges.
+      A clone of NYT's Wordle game, with playable records of all current and past Wordle challenges. (March 2022)
     </p>
 
     <BrowserFrame src="/assets/portfolio/wordle-mockup.png" className="mt-8"/>

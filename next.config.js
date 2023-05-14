@@ -14,7 +14,8 @@ const nextConfig = {
         pathname: '/secure.notion-static.com/**',
       }
     ],
-    minimumCacheTTL: 60*60*24*30, // 30 days
+    // minimumCacheTTL: 60*60*24*30, // 30 days
+    minimumCacheTTL: 60*60, // 1 hr
   }
 }
 
