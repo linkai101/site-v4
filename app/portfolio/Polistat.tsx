@@ -26,7 +26,7 @@ export function Content() {
     ]}
   >
     <p className="text-md font-light">
-      A project by '23 seniors at Montgomery Blair HS. Our political statistics class modeled the 2022 U.S. Senate and gubernatorial elections based on each race's demographics, voting history, and live polling data. I created the website and aided in the coordination of the project. (Fall 2022)
+      A project by &apos;23 seniors at Montgomery Blair HS. Our political statistics class modeled the 2022 U.S. Senate and gubernatorial elections based on each race&apos;s demographics, voting history, and live polling data. I created the website and aided in the coordination of the project. (Fall 2022)
     </p>
 
     <BrowserFrame src="/assets/portfolio/polistat-mockup.png" className="mt-8"/>

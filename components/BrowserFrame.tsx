@@ -15,7 +15,10 @@ export default function BrowserFrame({ src, caption, ...rest }: { src: string; c
         </div>
 
         <div className="w-full max-h-96 overflow-y-scroll rounded-b-xl">
-          <img src={src}/>
+          <img
+            src={src}
+            alt={caption}
+          />
         </div>
       </div>
 
