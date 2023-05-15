@@ -2,11 +2,11 @@ import ContentHead from './ContentHead';
 
 export function Thumbnail() {
   return <div
-    className="h-full px-4 py-2 flex items-center justify-center relative bg-stone-800 overflow-hidden"
+    className="h-full px-4 py-12 flex items-center justify-center relative bg-stone-800 overflow-hidden"
   >
     <img
       src="/assets/portfolio/rythmclone.svg"
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-16"
+      className="h-16"
     />
   </div>;
 }

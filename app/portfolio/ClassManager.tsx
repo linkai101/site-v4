@@ -4,7 +4,7 @@ import BrowserFrame from 'components/BrowserFrame';
 
 export function Thumbnail() {
   return <div
-    className="h-full px-4 py-2 flex items-center justify-center relative bg-[#fbeee4]/80 overflow-hidden"
+    className="h-full px-4 py-12 flex items-center justify-center relative bg-[#fbeee4]/80 overflow-hidden"
   >
     <img
       src="/assets/portfolio/classmanager-bg.png"
