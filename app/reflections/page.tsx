@@ -10,6 +10,7 @@ export default async function ReflectionsPage() {
     await getSinglePost('summer-camp-volunteer-reflections'),
     await getSinglePost('a-stone-passing-through-the-water'),
     await getSinglePost('yin-and-yang'),
+    await getSinglePost('the-company-man'),
   ];
 
   return <>

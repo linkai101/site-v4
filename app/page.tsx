@@ -69,10 +69,10 @@ export default function HomePage() {
           <div className="flex gap-4 sm:gap-8">
             <div>
               <h2 className="text-2xl font-extrabold font-display">
-                Hey! I'm Linkai. <span className="text-theme-onBackground/30 text-base">(he/him)</span>
+                Hey! I&apos;m Linkai. <span className="text-theme-onBackground/30 text-base">(he/him)</span>
               </h2>
               <p className="font-light mt-2">
-                I'm a student currently based in Maryland. (Montgomery Blair HS &apos;23)
+                I&apos;m a student currently based in Maryland. (Montgomery Blair HS &apos;23)
                 Welcome to my corner of the internet!
               </p>
             </div>
@@ -93,7 +93,7 @@ export default function HomePage() {
                     Portfolio
                   </h4>
                   <p className="text-xs leading-4 mt-0.5">
-                    A showcase of my best projects. Check out what I've been up to!
+                    A showcase of my best projects. Check out what I&apos;ve been up to!
                   </p>
                 </div>
 
@@ -110,7 +110,7 @@ export default function HomePage() {
                     ORACLE of Blair 2022
                   </h4>
                   <p className="text-xs leading-4 mt-0.5">
-                    A project to predict the 2022 midterm elections. Created by '23 seniors at MBHS.
+                    A project to predict the 2022 midterm elections. Created by &apos;23 seniors at MBHS.
                   </p>
                 </div>
 
@@ -118,6 +118,7 @@ export default function HomePage() {
                   <img
                     src="/assets/oracle.png"
                     className="h-10 aspect-square rounded-md"
+                    alt="ORACLE of Blair 2022"
                   />
                 </div>
               </div>
@@ -138,6 +139,7 @@ export default function HomePage() {
                   <img
                     src="/assets/stts.png"
                     className="h-10 aspect-square rounded-md"
+                    alt="STEM to the Sky"
                   />
                 </div>
               </div>

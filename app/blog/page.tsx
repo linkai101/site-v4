@@ -16,7 +16,7 @@ export default async function BlogPage() {
       </h1>
 
       <p className="mt-1">
-        My thoughts, ideas, experiments, and more. Check out what I'm up to!
+        My thoughts, ideas, experiments, and more. Check out what I&apos;m up to!
       </p>
 
       <div className="min-h-[30rem] flex flex-col md:flex-row bg-theme-surface border-2 border-theme-surface rounded-xl overflow-hidden mt-8">
