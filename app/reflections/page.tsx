@@ -3,14 +3,18 @@ import Link from "next/link";
 import { getSinglePost } from "lib/notion";
 
 // import DepthScene from 'components/DepthScene/DepthScene';
+import BustCloud from 'components/BustCloud';
+
+import { FiMove } from 'react-icons/fi';
 
 export default async function ReflectionsPage() {
   const posts = [
     await getSinglePost('a-poem-i-wrote-about-my-journey'),
     await getSinglePost('summer-camp-volunteer-reflections'),
-    await getSinglePost('a-stone-passing-through-the-water'),
     await getSinglePost('yin-and-yang'),
+    await getSinglePost('is-there-a-god'),
     await getSinglePost('the-company-man'),
+    await getSinglePost('a-stone-passing-through-the-water'),
   ];
 
   return <>
@@ -38,6 +42,11 @@ export default async function ReflectionsPage() {
             ]}
             fireflies={true}
           /> */}
+          <BustCloud/>
+
+          <span className="absolute bottom-2 right-2 pl-1.5 pr-2 py-0.5 flex items-center gap-1 text-xs font-medium bg-white/75 text-black rounded-full pointer-events-none">
+            <FiMove className="text-lg"/> drag
+          </span>
         </div>
       </div>
 
