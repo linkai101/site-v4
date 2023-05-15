@@ -40,8 +40,15 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
       }
       
       {/* TAGS */}
-      {post.metadata.tags.length > 0 &&
+      {(post.metadata.tags.length > 0 || !post.metadata.isPublished) &&
         <div className="flex gap-2 mt-2">
+          {!post.metadata.isPublished &&
+            <span
+              className={`pl-2 pr-3 pt-1.5 pb-1 text-sm text-theme-onSurface/75 bg-theme-surface/75 rounded-full`}
+            >
+              🔗 unlisted
+            </span>
+          }
           {post.metadata.tags.map((tag: { id: string, name: string, color: string }) =>
             <span
               className={`px-3 pt-1.5 pb-1 text-sm text-notion-${tag.color||'primaryVariant'} bg-notion-${tag.color||'primaryVariant'}/10 rounded-full`}
@@ -54,9 +61,9 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
       }
 
       {/* COMMENTS */}
-      {(post.comments.length > 0 || !post.metadata.isPublished) &&
+      {(post.comments.length > 0/* || !post.metadata.isPublished*/) &&
         <div className="pt-5 pb-3 flex flex-col gap-3 border-y border-theme-onBackground/10 mt-6">
-          {!post.metadata.isPublished &&
+          {/* {!post.metadata.isPublished &&
             <div className="flex gap-3">
               <span className="text-xl">
                 🔗
@@ -70,7 +77,7 @@ export default async function BlogPostPage({ params: { slug } }: { params: { slu
                 </p>
               </div>
             </div>
-          }
+          } */}
           {post.comments.map((comment:any) =>
             <div className="flex gap-3" key={comment.id}>
               <img
