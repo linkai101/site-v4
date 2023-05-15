@@ -86,6 +86,7 @@ export function Lamp(props: any) {
     <mesh ref={lamp} {...bind}>
       <cylinderGeometry args={[0.5, 1.5, 2, 32]} />
       <meshStandardMaterial />
+      {/* @ts-ignore */}
       <SpotLight
         castShadow
         target={target}
