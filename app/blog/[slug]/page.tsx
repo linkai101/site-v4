@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from "next/navigation";
 
 import ReactMarkdown from 'react-markdown';
@@ -8,6 +9,19 @@ import { getSinglePost } from "lib/notion";
 import MarkdownComponents from "components/MarkdownComponents";
 
 export const revalidate = 60; // seconds
+
+export async function generateMetadata({ params: { slug } }: { params: { slug:string } }) {
+  const post = await await getSinglePost(slug);
+
+  if (!post) return {
+    title: `404 – Linkai Wu`,
+  };
+
+  return {
+    title: `${post?.metadata.title} – Linkai Wu`,
+    description: `${new Date(post?.metadata.date).toLocaleDateString('en-US', { year: 'numeric', month: 'numeric', day: 'numeric' })} — ${post?.metadata.description}`,
+  };
+}
 
 export default async function BlogPostPage({ params: { slug } }: { params: { slug: string } }) {
   const post = await getSinglePost(slug);

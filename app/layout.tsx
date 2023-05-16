@@ -1,6 +1,12 @@
 import './globals.css';
+import type { Metadata } from 'next';
 
 import Navbar from './Navbar';
+
+export const metadata: Metadata = {
+  title: 'Linkai Wu',
+  description: 'I\'m a maker, designer, and student currently based in Maryland. Welcome to my corner of the internet!',
+};
 
 export default function RootLayout({
   children,

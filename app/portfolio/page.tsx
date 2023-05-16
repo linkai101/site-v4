@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
 import React from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+// import Link from 'next/link';
+// import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { Thumbnail as PolistatThumbnail, Content as PolistatContent } from './Polistat';
@@ -73,7 +73,7 @@ const portfolio: {
 
 export default function PortfolioPage({ searchParams }: { searchParams?: { project?: string } }) {
   const project = searchParams?.project;
-  const router = useRouter();
+  // const router = useRouter();
 
   const [selectedProject, setSelectedProject] = React.useState<string|null>(project as string);
 

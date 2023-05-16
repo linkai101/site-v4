@@ -1,9 +1,15 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 
 import { getDatabase, getAllPublished } from 'lib/notion';
 
 export const revalidate = 60; // seconds
+
+export const metadata: Metadata = {
+  title: 'Blog – Linkai Wu',
+  description: 'My thoughts, ideas, experiments, and more. Check out what I\'m up to! I\'m Linkai Wu, a maker, designer, and student currently based in Maryland.',
+};
 
 export default async function BlogPage() {
   const { tags } = await getDatabase();

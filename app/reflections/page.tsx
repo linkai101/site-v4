@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from "next/link";
 
 import { getSinglePost } from "lib/notion";
@@ -6,6 +7,11 @@ import { getSinglePost } from "lib/notion";
 import BustCloud from 'components/BustCloud';
 
 import { FiMove } from 'react-icons/fi';
+
+export const metadata: Metadata = {
+  title: 'Reflections – Linkai Wu',
+  description: 'A series of reflections as I graduate high school for an English assignment. Get to know me!',
+};
 
 export default async function ReflectionsPage() {
   const posts = [
