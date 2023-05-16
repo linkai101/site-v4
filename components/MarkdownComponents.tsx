@@ -17,7 +17,7 @@ export default {
   h1: ({ children }:any) => <h1 className="text-3xl font-bold mt-7">{children}</h1>,
   h2: ({ children }:any) => <h2 className="text-2xl font-bold mt-6">{children}</h2>,
   h3: ({ children }:any) => <h3 className="text-xl font-bold mt-5">{children}</h3>,
-  a: ({ children, href }:any) => <Link className="text-theme-primaryVariant hover:text-theme-primary underline underline-offset-2" href={href}>{children}</Link>,
+  a: ({ children, href }:any) => <Link className="text-theme-primaryVariant hover:text-theme-primary underline underline-offset-2" href={href} target="_blank" rel="noreferrer noopener">{children}</Link>,
   ul: ({ children, className }:any) => (
     className === 'contains-task-list' ? <ul className="pl-4 list-none list-inside mt-3">{children}</ul>
     : <ul className="pl-4 list-disc list-inside mt-3">{children}</ul>
