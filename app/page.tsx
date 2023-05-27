@@ -72,7 +72,7 @@ export default function HomePage() {
                 Hey! I&apos;m Linkai. <span className="text-theme-onBackground/30 text-base">(he/him)</span>
               </h2>
               <p className="font-light mt-2">
-                I&apos;m a student currently based in Maryland. (Montgomery Blair HS &apos;23)
+                I&apos;m a rising freshman at UW-Madison currently based in Maryland. (Montgomery Blair HS &apos;23)
                 Welcome to my corner of the internet!
               </p>
             </div>
@@ -184,7 +184,7 @@ export default function HomePage() {
           </div>
 
           <p className="text-xs font-light italic mt-10">
-            Last updated: Apr 26, 2023
+            Last updated: May 27, 2023
           </p>
         </div>
       </div>
